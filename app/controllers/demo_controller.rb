@@ -19,7 +19,7 @@ class DemoController < ApplicationController
       
       respond_to do |format|
         format.html
-        format.json { render :json => {:success=>true} }
+        format.json { render :json => { :success=>true } }
       end
       # redirect_to :dashboard
     # else render
@@ -27,6 +27,7 @@ class DemoController < ApplicationController
   end
 
   def dashboard
+    @matrixes = []
   end
 
   def matrix

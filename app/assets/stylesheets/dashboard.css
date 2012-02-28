@@ -1,10 +1,10 @@
 body {
-    background: url(../images/bg-login.png) 0 0 repeat; 
+    background: url(/assets/images/bg-login.png) 0 0 repeat; 
     text-align: center;
 }
 
 .dashboard-wrapper {
-    background: url(../images/bg-dashboard.png) 0 0 no-repeat;
+    background: url(/assets/images/bg-dashboard.png) 0 0 no-repeat;
     height: 768px;
     width: 1024px;
     margin: 0 auto;

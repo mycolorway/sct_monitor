@@ -1,2 +1,35 @@
-<h1>Demo#dashboard</h1>
-<p>Find me in app/views/demo/dashboard.html.erb</p>
+<% content_for :title do %>Dashboard<% end %>
+
+<% content_for :styles do %>
+<%= stylesheet_link_tag    "dashboard", :media => "all" %>
+<% end %>
+
+<% content_for :scripts do %>
+<%= javascript_include_tag "jqtouch", 'socket', 'dashboard' %>
+<script>
+    var userType = 0,
+        uid = 1,
+        isIpad = false,
+        isController = false,
+        guid = "";
+        
+    userType = 1;
+    isIpad = false;
+</script>
+<% end %>
+
+<div class="dashboard-wrapper">
+    <div class="header">
+        <h1>电信业务监控系统</h1>
+    </div>
+    <div class="content">
+        <div class="dashboard-nav">
+            <% @matrixes.each do |matrix| %>
+            <div id="dashboard-item-<%= matrix.order %>" class="dashboard-item">
+                <a href="/matrix/<%= matrix.guid %>/" guid="<%= matrix.guid %>">
+                    <img src="<%= matrix.image.url %>" /></a>
+            </div>
+            <% end %>
+        </ul>
+    </div>
+</div>
