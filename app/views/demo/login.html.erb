@@ -1,0 +1,29 @@
+<% content_for :title do %>Login<% end %>
+
+<% content_for :styles do %>
+<link href="/assets/style.less" rel="stylesheet/less" />
+<% end %>
+
+<% content_for :scripts do %>
+<%= javascript_include_tag "login" %>
+<% end %>
+
+<div class="login-wrapper">
+  <div class="login-light"></div>
+  <div class="login-panel">
+      <h1>POWERMATRIX</h1>
+      <form autocomplete="off">
+          <div class="input-wrapper">
+              <p class="un">
+                  <input type="text" id="username" name="username" placeholder="用户名" />
+              </p>
+              <p class="pw">
+                  <input type="password" id="password" name="password" placeholder="密码" />
+              </p>
+          </div>
+          <div class="submit-wrapper">
+              <button id="btn-login" type="submit">登录</button>
+          </div>
+      </form>
+  </div>
+</div>

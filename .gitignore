@@ -14,7 +14,6 @@ data
 db
 # folders
 webroot
-public
 tmp
 # logs
 logs

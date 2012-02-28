@@ -6,6 +6,11 @@ SctMonitor::Application.routes.draw do
   get "demo/dashboard"
 
   get "demo/index"
+  
+  post 'demo/login'
+  
+  match "/login" => 'demo#login'
+  match '/dashboard' => 'demo#dashboard'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -8,7 +8,9 @@
   <title><%= yield :title %> - PowerMatrix</title>
   
   <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= yield :styles %>
   <%= javascript_include_tag "application" %>
+  <%= yield :scripts %>
   <%= csrf_meta_tags %>
 </head>
 <body>
