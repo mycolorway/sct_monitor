@@ -1,0 +1,29 @@
+# generated
+*.pyc
+*.pyo
+*.pid
+migrations
+# eclipse project config
+.project
+.pydevproject
+.settings
+# db
+sqlite3.db
+data.txt
+data
+db
+# folders
+webroot
+public
+tmp
+# logs
+logs
+log
+# local settings
+settings.py
+# external project syn link
+django_pyrcp
+nemo
+persistent_messages
+
+reset_db.sh
