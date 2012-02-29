@@ -12,7 +12,7 @@
 //
 //= require less-1.1.3.min
 //= require jquery
-//= require jquery_ujs
+//= //require jquery_ujs
 //= require jquery-ui-1.8.16.custom.min
 //= require jquery.jclock
 

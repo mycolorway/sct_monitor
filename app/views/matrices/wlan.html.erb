@@ -6,16 +6,7 @@
 
 <% content_for :scripts do %>
 <%= javascript_include_tag "highcharts", 'socket', 'wlan' %>
-<script>
-    var userType = 0,
-        uid = 1,
-        isIpad = false,
-        isController = false,
-        guid = '<%= @matrix.guid %>';
-        
-    userType = 1;
-    isIpad = false;
-</script>
+<%= render 'in_page_scripts' %>
 <% end %>
 
 <div class="wrapper wlan">

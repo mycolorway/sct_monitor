@@ -5,6 +5,12 @@ SctMonitor::Application.routes.draw do
   post 'demo/login'
   match "/login" => 'demo#login'
   
+  get 'demo/logout'
+  match '/logout' => 'demo#logout'
+  
+  post 'demo/control_on'
+  post 'demo/control_off'
+  
   resources :matrices#, :constraints => {:guid => /[a-z0-9]{32}/}
   resources :matrix, :controller=>'matrices'
   match '/dashboard' => 'matrices#index'

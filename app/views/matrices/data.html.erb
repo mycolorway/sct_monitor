@@ -7,18 +7,8 @@
 
 <% content_for :scripts do %>
 <%= javascript_include_tag "jqtouch", "highcharts", 'socket', 'data' %>
-<script>
-    var userType = 0,
-        uid = 1,
-        isIpad = false,
-        isController = false,
-        guid = '<%= @matrix.guid %>';
-        
-    userType = 1;
-    isIpad = false;
-</script>
+<%= render 'in_page_scripts' %>
 <% end %>
-
 
 <div class="data wrapper">
 
