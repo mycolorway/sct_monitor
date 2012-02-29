@@ -10,7 +10,7 @@ migrations
 # db
 sqlite3.db
 data.txt
-data
+#data
 db
 # folders
 webroot
