@@ -1,0 +1,122 @@
+<% content_for :title do %><%= @matrix.name %><% end %>
+
+<% content_for :styles do %>
+<link href="/assets/style.less" rel="stylesheet/less" />
+<% end %>
+
+<% content_for :scripts do %>
+<%= javascript_include_tag "highcharts", 'socket', 'warn' %>
+<script>
+    var userType = 0,
+        uid = 1,
+        isIpad = false,
+        isController = false,
+        guid = '<%= @matrix.guid %>';
+        
+    userType = 1;
+    isIpad = false;
+</script>
+<% end %>
+
+<div class="wrapper warn">
+
+    <%= render 'header' %>
+    
+    <div class="warn-content">
+        <div class="summary">
+            <div class="unhandle">
+                <span>今日未处理</span>
+                <em id="unhandle-num">4</em>
+            </div>
+            <div class="handled">
+                <span>今日已处理</span>
+                <em id="handled-num">2</em>
+            </div>
+            <div class="detail">
+                <div class="legend">
+                    <span class="secondary"><b></b>次级告警</span>
+                    <span class="main"><b></b>主要告警</span>
+                    <span class="emergency"><b></b>紧急告警</span>
+                </div>
+                <div class="bar clearfix">
+                    <span class="bar-secondary">6</span>
+                    <span class="bar-main">14</span>
+                    <span class="bar-emergency">1</span>
+                </div>
+            </div>
+        </div>
+        <div class="tb">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="desc">告警内容</th>
+                        <th class="time">告警时间</th>
+                        <th class="level">级别</th>
+                        <th class="last">持续时间</th>
+                        <th class="status">基站类型</th>
+                        <th class="type">告警类型</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="desc"><div class="domino-board"></div></td>
+                        <td><div class="domino-board"></div></td>
+                        <td><div class="domino-board"></div></td>
+                        <td><div class="domino-board"></div></td>
+                        <td><div class="domino-board"></div></td>
+                        <td><div class="domino-board"></div></td>
+                    </tr>
+                    <tr>
+                        <td class="desc"><div class="domino-board"></div></td>
+                        <td><div class="domino-board"></div></td>
+                        <td><div class="domino-board"></div></td>
+                        <td><div class="domino-board"></div></td>
+                        <td><div class="domino-board"></div></td>
+                        <td><div class="domino-board"></div></td>
+                    </tr>
+                    <tr>
+                        <td class="desc"><div class="domino-board"></div></td>
+                        <td><div class="domino-board"></div></td>
+                        <td><div class="domino-board"></div></td>
+                        <td><div class="domino-board"></div></td>
+                        <td><div class="domino-board"></div></td>
+                        <td><div class="domino-board"></div></td>
+                    </tr>
+                    <tr>
+                        <td class="desc"><div class="domino-board"></div></td>
+                        <td><div class="domino-board"></div></td>
+                        <td><div class="domino-board"></div></td>
+                        <td><div class="domino-board"></div></td>
+                        <td><div class="domino-board"></div></td>
+                        <td><div class="domino-board"></div></td>
+                    </tr>
+                    <tr>
+                        <td class="desc"><div class="domino-board"></div></td>
+                        <td><div class="domino-board"></div></td>
+                        <td><div class="domino-board"></div></td>
+                        <td><div class="domino-board"></div></td>
+                        <td><div class="domino-board"></div></td>
+                        <td><div class="domino-board"></div></td>
+                    </tr>
+                    <tr>
+                        <td class="desc"><div class="domino-board"></div></td>
+                        <td><div class="domino-board"></div></td>
+                        <td><div class="domino-board"></div></td>
+                        <td><div class="domino-board"></div></td>
+                        <td><div class="domino-board"></div></td>
+                        <td><div class="domino-board"></div></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="chart-wrapper">
+            <div id="warn-chart"></div>
+        </div>
+    </div>
+
+    <div class="warn-nav">
+        <span class="live" href="#" index="0">全部</span>
+        <span href="#" index="1">WLAN</span>
+        <span href="#" index="2">C网</span>
+    </div>
+</div>

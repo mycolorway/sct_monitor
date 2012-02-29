@@ -1,4 +1,7 @@
 SctMonitor::Application.routes.draw do
+  resources :matrices#, :constraints => {:guid => /[a-z0-9]{32}/}
+  resources :matrix, :controller=>'matrices'
+
   root :to => 'demo#index'
   
   get "demo/matrix"
@@ -10,7 +13,7 @@ SctMonitor::Application.routes.draw do
   post 'demo/login'
   
   match "/login" => 'demo#login'
-  match '/dashboard' => 'demo#dashboard'
+  match '/dashboard' => 'matrices#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

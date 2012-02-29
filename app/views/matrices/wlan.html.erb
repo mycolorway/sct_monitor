@@ -1,0 +1,67 @@
+<% content_for :title do %><%= @matrix.name %><% end %>
+
+<% content_for :styles do %>
+<link href="/assets/style.less" rel="stylesheet/less" />
+<% end %>
+
+<% content_for :scripts do %>
+<%= javascript_include_tag "highcharts", 'socket', 'wlan' %>
+<script>
+    var userType = 0,
+        uid = 1,
+        isIpad = false,
+        isController = false,
+        guid = '<%= @matrix.guid %>';
+        
+    userType = 1;
+    isIpad = false;
+</script>
+<% end %>
+
+<div class="wrapper wlan">
+
+    <%= render 'header' %>
+    
+    <div class="wlan-bd clearfix">
+        <div class="sidebar">
+            <h3 id="test">今日在线用户数<em>户</em></h3>
+            <ul id="today-online"></ul>
+        </div>
+        <div class="content">
+            <h3 id="city-name">德阳市</h3>
+            <div id="online-user"></div>
+            <div id="flow-rate"></div>
+            <div id="rate-wrapper">
+                <div id="send-rate" class="instrument">
+                    <h5>当前发送速率：<em>11.3</em></h5>
+                    <div class="face">
+                        <div class="pointer"></div>
+                    </div>
+                    <div class="min">
+                        <span>Min</span>
+                        <span class="min-value">0 Mbps</span>
+                    </div>
+                    <div class="max">
+                        <span>Max</span>
+                        <span class="max-value">1000 Mbps</span>
+                    </div>
+                </div>
+                <div id="receive-rate" class="instrument">
+                    <h5>当前接收速率：<em>10.9</em></h5>
+                    <div class="face">
+                        <div class="pointer"></div>
+                    </div>
+                    <div class="min">
+                        <span>Min</span>
+                        <span class="min-value">0 Mbps</span>
+                    </div>
+                    <div class="max">
+                        <span>Max</span>
+                        <span class="max-value">1000 Mbps</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

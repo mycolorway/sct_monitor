@@ -1,0 +1,115 @@
+<% content_for :title do %><%= @matrix.name %><% end %>
+
+<% content_for :styles do %>
+<%= stylesheet_link_tag    "jqtouch", :media => "all" %>
+<link href="/assets/style.less" rel="stylesheet/less" />
+<% end %>
+
+<% content_for :scripts do %>
+<%= javascript_include_tag "jqtouch", "highcharts", 'socket', 'data' %>
+<script>
+    var userType = 0,
+        uid = 1,
+        isIpad = false,
+        isController = false,
+        guid = '<%= @matrix.guid %>';
+        
+    userType = 1;
+    isIpad = false;
+</script>
+<% end %>
+
+
+<div class="data wrapper">
+
+    <%= render 'header' %>
+
+    <div id="jqt" class="data-content">
+        <div id="screen-1" class="screen clearfix">
+            {% comment %}
+            <div class="board">
+                <h5 class="title">3G手机上网卡吞吐量</h5>
+                <div class="main">
+                    <span class="value">5,721</span>
+                </div>
+                <div class="delta up">&#x25b2;<em>5<sup>.33%</sup></em></div>
+                <div class="unit">单位: GB</div>
+            </div>
+            <div class="board">
+                <h5 class="title">3G手机终端活跃用户数</h5>
+                <div class="main">
+                    <span class="value">89,214</span>
+                </div>
+                <div class="delta up">&#x25b2;<em>9<sup>.45%</sup></em></div>
+                <div class="unit">单位: 人</div>
+            </div>
+
+            <div class="board">
+                <h5 class="title">3G上网卡用户占比</h5>
+                <div class="main">
+                    <div id="send-rate" class="instrument">
+                        <div class="face">
+                            <div class="pointer"></div>
+                        </div>
+                        <div class="min">
+                            <span>Min</span>
+                            <span class="min-value">0%</span>
+                        </div>
+                        <div class="max">
+                            <span>Max</span>
+                            <span class="max-value">100%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="delta down">&#x25bc;<em>16<sup>.33%</sup></em></div>
+                <div class="unit">单位: %</div>
+            </div>
+            <div class="board">
+                <h5 class="title">C网日均VLR忙时登记用户数</h5>
+                <div class="main">
+                    <span class="value">4,811</span>
+                </div>
+                <div class="delta up">&#x25b2;<em>2<sup>.97%</sup></em></div>
+                <div class="unit">单位: 人</div>
+            </div>
+
+            <div class="board">
+                <h5 class="title">C网日均1X数据话务量</h5>
+                <div class="main">
+                    <span class="value">5,721</span>
+                </div>
+                <div class="delta up">&#x25b2;<em>6<sup>.02%</sup></em></div>
+                <div class="unit">单位: GB</div>
+            </div>
+            <div class="board">
+                <h5 class="title">C网日均EVDO话务量</h5>
+                <div class="main">
+                    <span class="value">8,184</span>
+                </div>
+                <div class="delta up">&#x25b2;<em>2<sup>.41%</sup></em></div>
+                <div class="unit">单位: 人</div>
+            </div>
+
+            <div class="board">
+                <h5 class="title">C网彩信终端发送MMS条数</h5>
+                <div class="main">
+                    <span class="value">16,441</span>
+                </div>
+                <div class="delta down">&#x25bc;<em>1<sup>.43%</sup></em></div>
+                <div class="unit">单位: %</div>
+            </div>
+            <div class="board">
+                <h5 class="title">软交换来去中继群应答话务量</h5>
+                <div class="main">
+                    <span class="value">9,452</span>
+                </div>
+                <div class="delta up">&#x25b2;<em>3<sup>.69%</sup></em></div>
+                <div class="unit">单位: 人</div>
+            </div>
+            {% endcomment %}
+        </div>
+        <div id="screen-2" class="screen clearfix"></div>
+        <div id="screen-3" class="screen clearfix"></div>
+    </div>        
+    <div id="screen-indicator" class="screen-indicator"></div>
+</div>

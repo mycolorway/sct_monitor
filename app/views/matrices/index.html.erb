@@ -24,10 +24,10 @@
     </div>
     <div class="content">
         <div class="dashboard-nav">
-            <% @matrixes.each do |matrix| %>
+            <% @matrices.each do |matrix| %>
             <div id="dashboard-item-<%= matrix.order %>" class="dashboard-item">
                 <a href="/matrix/<%= matrix.guid %>/" guid="<%= matrix.guid %>">
-                    <img src="<%= matrix.image.url %>" /></a>
+                    <img src="/demo/images/<%= matrix.thumb %>" /></a>
             </div>
             <% end %>
         </ul>

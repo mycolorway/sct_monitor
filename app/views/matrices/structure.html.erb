@@ -1,0 +1,75 @@
+<% content_for :title do %><%= @matrix.name %><% end %>
+
+<% content_for :styles do %>
+<link href="/assets/style.less" rel="stylesheet/less" />
+<% end %>
+
+<% content_for :scripts do %>
+<%= javascript_include_tag 'socket', 'structure' %>
+<script>
+    var userType = 0,
+        uid = 1,
+        isIpad = false,
+        isController = false,
+        guid = '<%= @matrix.guid %>';
+        
+    userType = 1;
+    isIpad = false;
+</script>
+<% end %>
+
+
+<div class="wrapper structure">
+
+    <%= render 'header' %>
+
+    <div class="structure-content clearfix">
+        <div class="topology-wrapper">
+            <img class="topology-img" src="/assets/images/topology.png" />
+            <div class="ellipse"><span class="ball"></span></div>
+            <div class="other">
+                <span class="ball aaa"></span>
+                <span class="ball ip ip-0"></span>
+                <span class="ball ip ip-1"></span>
+                <span class="ball tdm-0"></span>
+                <span class="ball tdm-1"></span>
+                <span class="ball tdm tdm-2"></span>
+                <span class="ball tdm tdm-3"></span>
+            </div>
+            <div class="ce">
+                <span class="ball ce-0"></span>
+                <span class="ball ce-1"></span>
+                <span class="ball ce-2"></span>
+                <span class="ball ce-3"></span>
+            </div>
+        </div>
+        <ul id="area-1" class="area">
+            <li>绵阳</li>
+            <li>德阳</li>
+            <li>阿坝</li>
+            <li>广元</li>
+        </ul>
+        <ul id="area-2" class="area">
+        	<li>宜宾</li>
+        	<li>自贡</li>
+        	<li>内江</li>
+            <li class="warning">资阳</li>
+        	<li>泸州</li>
+        </ul>
+        <ul id="area-3" class="area">
+        	<li>乐山</li>
+            <li class="warning">眉山</li>
+        	<li>雅安</li>
+        	<li>凉山</li>
+        	<li>攀枝花</li>
+        </ul>
+        <ul id="area-4" class="area">
+        	<li>广安</li>
+        	<li>遂宁</li>
+        	<li>巴中</li>
+        	<li>达州</li>
+        	<li>南充</li>
+        </ul>
+    </div>
+</div>
+

@@ -1,3 +1,4 @@
+source 'http://ruby.taobao.org/'
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.1'
@@ -41,3 +42,5 @@ gem 'jquery-rails'
 # execjs
 gem 'therubyracer'
 # gem 'less-rails'
+
+gem 'seed-fu'#, '~> 2.1.0'

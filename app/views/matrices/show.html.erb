@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Guid:</b>
+  <%= @matrix.guid %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @matrix.name %>
+</p>
+
+<p>
+  <b>Template:</b>
+  <%= @matrix.template %>
+</p>
+
+<p>
+  <b>Thumb:</b>
+  <%= @matrix.thumb %>
+</p>
+
+<p>
+  <b>Order:</b>
+  <%= @matrix.order %>
+</p>
+
+
+<%= link_to 'Edit', edit_matrix_path(@matrix) %> |
+<%= link_to 'Back', matrices_path %>
