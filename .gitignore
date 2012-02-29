@@ -11,7 +11,7 @@ migrations
 sqlite3.db
 data.txt
 #data
-db
+#db
 # folders
 webroot
 tmp
@@ -19,10 +19,4 @@ tmp
 logs
 log
 # local settings
-settings.py
-# external project syn link
-django_pyrcp
-nemo
-persistent_messages
 
-reset_db.sh
