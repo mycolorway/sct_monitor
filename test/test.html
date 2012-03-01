@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <!-- <link rel="shortcut icon" href="/favicon.ico" /> -->
+
+    <!--<script src="/assets/scripts/jquery-1.6.2.min.js"></script>-->
+    <script>
+
+    var socket;
+
+    function connect() {
+
+        var host = "ws://127.0.0.1:8080/";
+
+        try {
+            if ( "WebSocket" in window ) {
+                socket = new WebSocket( host );
+            } else if ( "MozWebSocket" in window ) {
+                socket = new MozWebSocket( host );
+            } else {
+                throw "Your client does not support WebSocket";
+            }
+
+            message( "init scoket success" );
+
+            socket.onopen = function() {
+                message( "Socket Status: " + socket.readyState + " (open)");
+                
+                socket.send("{\"method\": \"register\",\"uid\": 1}");
+                socket.send("{\"method\": \"control_on\",\"uid\": 1, \"password\":\"whosyourdaddy\"}");
+                socket.send("{\"method\": \"command\",\"uid\": 1, \"data\":\"allyoubasebelongtous\"}");
+                socket.send("{\"method\": \"control_off\",\"uid\": 1}");
+            }
+
+            socket.onmessage = function( msg ) {
+                message( "Received: " + msg.data );
+            }
+
+            socket.onclose = function() {
+                message( "Socket Status: " + socket.readyState + " (closed)");
+            }
+        } catch( exception ) {
+            message( exception );
+        }
+        
+        return socket;
+    }
+
+    function send() {
+        /*var text = "中文测试";
+
+        try {
+            socket.send( text );
+            message( "Sent: " + text );
+        } catch( exception ) {
+            message( exception );
+        }*/
+    }
+
+    function message( msg ) {
+        //$( "#msg" ).prepend( "<p>" + msg + "</p>" );
+        console.log(msg);
+    }
+
+    /*$( function() {
+        if ( "WebSocket" in window 
+            || "MozWebSocket" in window ) {
+            connect();
+
+            //$( "#btn" ).click( send );
+        }
+    });*/
+    
+    if ( "WebSocket" in window 
+            || "MozWebSocket" in window ) {
+        connect();
+    }
+    </script>
+</head>
+<body>
+    <div class="header">
+    	<h1 class="logo">
+    		websocket
+    	</h1>
+    </div>
+
+    <button id="btn">send request</button>
+
+    <div id="msg"></div>
+</body>
+</html>
