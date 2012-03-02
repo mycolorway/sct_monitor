@@ -1,1 +1,132 @@
-[{"widget": "number", "ratio": 1.3500000000000001, "title": "C\u7f51\u65e5\u5747VLR\u5fd9\u65f6\u767b\u8bb0\u7528\u6237\u6570", "current": 4806986, "id": 1, "unit": "\u4eba"}, {"current": 0.23000000000000001, "widget": "gauge", "ratio": -18.600000000000001, "title": "C\u7f51\u57fa\u7ad9\u65ad\u7ad9\u7387\uff08\u22640.8%)", "max": 0.80000000000000004, "min": 0.0, "id": 17, "unit": "%"}, {"current": 98.650000000000006, "widget": "gauge", "ratio": 22.73, "title": "C\u7f51\u5bfb\u547c\u6210\u529f\u7387\uff08\u226596%)", "max": 100, "min": 96, "id": 16, "unit": "%"}, {"widget": "number", "ratio": 13.6, "title": "C\u7f51\u65e5\u5747\u8bed\u97f3\u8bdd\u52a1\u91cf", "current": 1103711, "id": 2, "unit": "\u7b14"}, {"widget": "number", "ratio": 8.3000000000000007, "title": "C\u7f51\u65e5\u57471X\u6570\u636e\u8bdd\u52a1\u91cf", "current": 516083, "id": 3, "unit": "\u7b14"}, {"widget": "number", "ratio": 5.9400000000000004, "title": "C\u7f51\u65e5\u5747EVDO\u8bdd\u52a1\u91cf", "current": 787289, "id": 4, "unit": "\u7b14"}, {"widget": "number", "ratio": -9.3000000000000007, "title": "C\u7f51\u65e5\u5747\u5fd9\u65f6PDSN\uff081X\uff09\u5728\u7ebf\u7528\u6237\u6570", "current": 56043, "id": 5, "unit": "\u4eba"}, {"current": 1.1000000000000001, "widget": "gauge", "ratio": -8.3000000000000007, "title": "C\u7f51\u4e1a\u52a1\u6389\u8bdd\u6bd4(\u5206\u949f/\u6b21)", "max": 10.0, "min": 0.0, "id": 13, "unit": "%"}, {"widget": "number", "ratio": 2.3500000000000001, "title": "C\u7f51\u65e5\u5747\u5fd9\u65f6PDSN\uff08EVDO\uff09\u5728\u7ebf\u7528\u6237\u6570", "current": 152265, "id": 6, "unit": "\u4eba"}, {"widget": "number", "ratio": 4.2999999999999998, "title": "C\u7f51\u5f69\u4fe1\u7ec8\u7aef\u53d1\u9001MMS\u6761\u6570", "current": 20118, "id": 7, "unit": "\u6761"}, {"current": 0.20999999999999999, "widget": "gauge", "ratio": -1.1699999999999999, "title": "C\u7f51\u6389\u8bdd\u7387\uff08\u22640.35%)", "max": 0.34999999999999998, "min": 0.0, "id": 12, "unit": "%"}, {"widget": "number", "ratio": 3.4399999999999999, "title": "C\u7f51\u5f69\u4fe1\u5e94\u7528\u53d1\u9001MMS\u6761\u6570", "current": 1037422, "id": 8, "unit": "\u6761"}, {"widget": "number", "ratio": 2.8399999999999999, "title": "C\u7f51\u77ed\u4fe1\u53d1\u9001\u6210\u529f\u603b\u91cf", "current": 5543770, "id": 9, "unit": "\u7b14"}, {"widget": "number", "ratio": 1.9399999999999999, "title": "C\u7f51\u77ed\u4fe1\u63a5\u6536\u6210\u529f\u603b\u91cf", "current": 14304810, "id": 10, "unit": "\u7b14"}, {"widget": "number", "ratio": 0.82999999999999996, "title": "\u5168\u5c40\u758f\u901a\u8bdd\u52a1\u91cf", "current": 843189, "id": 11, "unit": "\u7b14"}, {"current": 99.200000000000003, "widget": "gauge", "ratio": 0.23000000000000001, "title": "EVDO\u8fde\u63a5\u6210\u529f\u7387\uff08\u226595%)", "max": 100, "min": 95, "id": 14, "unit": "%"}, {"current": 98.400000000000006, "widget": "gauge", "ratio": 0.57999999999999996, "title": "C\u7f51\u77ed\u6d88\u606f\u9996\u6b21\u4e0b\u53d1\u6210\u529f\u7387\uff08\u226597%)", "max": 100, "min": 97, "id": 15, "unit": "%"}]
+[{
+    "widget": "number",
+    "ratio": 1.3500000000000001,
+    "title": "C\u7f51\u65e5\u5747VLR\u5fd9\u65f6\u767b\u8bb0\u7528\u6237\u6570",
+    "current": 4806986,
+    "id": 1,
+    "unit": "\u4eba"
+}, {
+    "current": 0.23000000000000001,
+    "widget": "gauge",
+    "ratio": -18.600000000000001,
+    "title": "C\u7f51\u57fa\u7ad9\u65ad\u7ad9\u7387\uff08\u22640.8%)",
+    "max": 0.80000000000000004,
+    "min": 0.0,
+    "id": 17,
+    "unit": "%"
+}, {
+    "current": 98.650000000000006,
+    "widget": "gauge",
+    "ratio": 22.73,
+    "title": "C\u7f51\u5bfb\u547c\u6210\u529f\u7387\uff08\u226596%)",
+    "max": 100,
+    "min": 96,
+    "id": 16,
+    "unit": "%"
+}, {
+    "widget": "number",
+    "ratio": 13.6,
+    "title": "C\u7f51\u65e5\u5747\u8bed\u97f3\u8bdd\u52a1\u91cf",
+    "current": 1103711,
+    "id": 2,
+    "unit": "\u7b14"
+}, {
+    "widget": "number",
+    "ratio": 8.3000000000000007,
+    "title": "C\u7f51\u65e5\u57471X\u6570\u636e\u8bdd\u52a1\u91cf",
+    "current": 516083,
+    "id": 3,
+    "unit": "\u7b14"
+}, {
+    "widget": "number",
+    "ratio": 5.9400000000000004,
+    "title": "C\u7f51\u65e5\u5747EVDO\u8bdd\u52a1\u91cf",
+    "current": 787289,
+    "id": 4,
+    "unit": "\u7b14"
+}, {
+    "widget": "number",
+    "ratio": -9.3000000000000007,
+    "title": "C\u7f51\u65e5\u5747\u5fd9\u65f6PDSN\uff081X\uff09\u5728\u7ebf\u7528\u6237\u6570",
+    "current": 56043,
+    "id": 5,
+    "unit": "\u4eba"
+}, {
+    "current": 1.1000000000000001,
+    "widget": "gauge",
+    "ratio": -8.3000000000000007,
+    "title": "C\u7f51\u4e1a\u52a1\u6389\u8bdd\u6bd4(\u5206\u949f/\u6b21)",
+    "max": 10.0,
+    "min": 0.0,
+    "id": 13,
+    "unit": "%"
+}, {
+    "widget": "number",
+    "ratio": 2.3500000000000001,
+    "title": "C\u7f51\u65e5\u5747\u5fd9\u65f6PDSN\uff08EVDO\uff09\u5728\u7ebf\u7528\u6237\u6570",
+    "current": 152265,
+    "id": 6,
+    "unit": "\u4eba"
+}, {
+    "widget": "number",
+    "ratio": 4.2999999999999998,
+    "title": "C\u7f51\u5f69\u4fe1\u7ec8\u7aef\u53d1\u9001MMS\u6761\u6570",
+    "current": 20118,
+    "id": 7,
+    "unit": "\u6761"
+}, {
+    "current": 0.20999999999999999,
+    "widget": "gauge",
+    "ratio": -1.1699999999999999,
+    "title": "C\u7f51\u6389\u8bdd\u7387\uff08\u22640.35%)",
+    "max": 0.34999999999999998,
+    "min": 0.0,
+    "id": 12,
+    "unit": "%"
+}, {
+    "widget": "number",
+    "ratio": 3.4399999999999999,
+    "title": "C\u7f51\u5f69\u4fe1\u5e94\u7528\u53d1\u9001MMS\u6761\u6570",
+    "current": 1037422,
+    "id": 8,
+    "unit": "\u6761"
+}, {
+    "widget": "number",
+    "ratio": 2.8399999999999999,
+    "title": "C\u7f51\u77ed\u4fe1\u53d1\u9001\u6210\u529f\u603b\u91cf",
+    "current": 5543770,
+    "id": 9,
+    "unit": "\u7b14"
+}, {
+    "widget": "number",
+    "ratio": 1.9399999999999999,
+    "title": "C\u7f51\u77ed\u4fe1\u63a5\u6536\u6210\u529f\u603b\u91cf",
+    "current": 14304810,
+    "id": 10,
+    "unit": "\u7b14"
+}, {
+    "widget": "number",
+    "ratio": 0.82999999999999996,
+    "title": "\u5168\u5c40\u758f\u901a\u8bdd\u52a1\u91cf",
+    "current": 843189,
+    "id": 11,
+    "unit": "\u7b14"
+}, {
+    "current": 99.200000000000003,
+    "widget": "gauge",
+    "ratio": 0.23000000000000001,
+    "title": "EVDO\u8fde\u63a5\u6210\u529f\u7387\uff08\u226595%)",
+    "max": 100,
+    "min": 95,
+    "id": 14,
+    "unit": "%"
+}, {
+    "current": 98.400000000000006,
+    "widget": "gauge",
+    "ratio": 0.57999999999999996,
+    "title": "C\u7f51\u77ed\u6d88\u606f\u9996\u6b21\u4e0b\u53d1\u6210\u529f\u7387\uff08\u226597%)",
+    "max": 100,
+    "min": 97,
+    "id": 15,
+    "unit": "%"
+}]

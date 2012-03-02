@@ -1,1 +1,204 @@
-{"done_num": 2, "alerts": [{"alert_type": "\u8bbe\u5907\u544a\u8b66", "level": 1, "content": "\u544a\u8b66\u63cf\u8ff0\uff1aBTS\u6389\u7ad9\uff0c\u539f\u56e0\u63cf\u8ff0\uff1aBSC\u548cBTS\u4e4b\u95f4\u8fde\u63a5\u65ad\u5f00\uff0c\u7269\u7406\u4f4d\u7f6e\uff1a\u65e0", "time": "8/11 11:38", "duration": "52\u79d2", "aid": 1, "point_type": "BS8800"}, {"alert_type": "\u8bbe\u5907\u544a\u8b66", "level": 2, "content": "\u544a\u8b66\u63cf\u8ff0\uff1a\u672a\u63a2\u6d4b\u5230CHM\uff0c\u539f\u56e0\u63cf\u8ff0\uff1a\u65e0\uff0c\u7269\u7406\u4f4d\u7f6e\uff1a\u673a\u67b6:1,\u673a\u6846:2,\u69fd\u4f4d:8", "time": "8/11 11:56", "duration": "43\u79d2", "aid": 2, "point_type": "CBTS I2"}, {"alert_type": "\u8bbe\u5907\u544a\u8b66", "level": 2, "content": "\u544a\u8b66\u63cf\u8ff0\uff1a\u5149\u53e3\u5149\u6a21\u5757\u65e0\u5149\uff0c\u539f\u56e0\u63cf\u8ff0\uff1a\u5149\u53e31\uff0c\u7269\u7406\u4f4d\u7f6e\uff1a\u673a\u67b6:1,\u673a\u6846:1,\u69fd\u4f4d:4,\u5b50\u5355\u5143:1", "time": "8/11 11:38", "duration": "27\u79d2", "aid": 3, "point_type": "BS8800"}, {"alert_type": "\u8bbe\u5907\u544a\u8b66", "level": 2, "content": "\u544a\u8b66\u63cf\u8ff0\uff1a\u4fe1\u9053\u4e0b\u884c\u5e27\u5931\u9501\uff0c\u539f\u56e0\u63cf\u8ff0\uff1aCH1\u4e0b\u884c\u5e27\u5931\u9501\uff0c\u7269\u7406\u4f4d\u7f6e\uff1a\u673a\u67b6:1,\u673a\u6846:1,\u69fd\u4f4d:3,\u5b50\u5355\u5143:1", "time": "8/11 11:35", "duration": "1\u5206\u949f", "aid": 4, "point_type": "BS8800"}, {"alert_type": "\u8bbe\u5907\u544a\u8b66", "level": 2, "content": "\u544a\u8b66\u63cf\u8ff0\uff1a\u8f7d\u6ce2\u4f4e\u529f\u7387\u9884\u544a\u8b66\u3002\uff0c\u539f\u56e0\u63cf\u8ff0\uff1a\u914d\u7f6e\u5728TRX Path 2\u4e0a\u7684\u8f7d\u9891\u4f4e\u529f\u7387\uff0c\u7269\u7406\u4f4d\u7f6e\uff1a\u673a\u67b6:1,\u673a\u6846:1,\u69fd\u4f4d:3,\u5b50\u5355\u5143:1", "time": "8/11 11:54", "duration": "1\u5206\u949f", "aid": 5, "point_type": "BS8800"}, {"alert_type": "\u8bbe\u5907\u544a\u8b66", "level": 2, "content": "\u544a\u8b66\u63cf\u8ff0\uff1aBTS\u6389\u7ad9\uff0c\u539f\u56e0\u63cf\u8ff0\uff1aBSC\u548cBTS\u4e4b\u95f4\u8fde\u63a5\u65ad\u5f00\uff0c\u7269\u7406\u4f4d\u7f6e\uff1a\u65e0", "time": "8/11 11:38", "duration": "52\u79d2", "aid": 6, "point_type": "BS8800"}, {"alert_type": "\u8bbe\u5907\u544a\u8b66", "level": 2, "content": "\u544a\u8b66\u63cf\u8ff0\uff1a\u672a\u63a2\u6d4b\u5230CHM\uff0c\u539f\u56e0\u63cf\u8ff0\uff1a\u65e0\uff0c\u7269\u7406\u4f4d\u7f6e\uff1a\u673a\u67b6:1,\u673a\u6846:2,\u69fd\u4f4d:8", "time": "8/11 11:56", "duration": "43\u79d2", "aid": 7, "point_type": "CBTS I2"}, {"alert_type": "\u8bbe\u5907\u544a\u8b66", "level": 2, "content": "\u544a\u8b66\u63cf\u8ff0\uff1a\u5149\u53e3\u5149\u6a21\u5757\u65e0\u5149\uff0c\u539f\u56e0\u63cf\u8ff0\uff1a\u5149\u53e31\uff0c\u7269\u7406\u4f4d\u7f6e\uff1a\u673a\u67b6:1,\u673a\u6846:1,\u69fd\u4f4d:4,\u5b50\u5355\u5143:1", "time": "8/11 11:38", "duration": "27\u79d2", "aid": 8, "point_type": "BS8800"}, {"alert_type": "\u8bbe\u5907\u544a\u8b66", "level": 2, "content": "\u544a\u8b66\u63cf\u8ff0\uff1a\u4fe1\u9053\u4e0b\u884c\u5e27\u5931\u9501\uff0c\u539f\u56e0\u63cf\u8ff0\uff1aCH1\u4e0b\u884c\u5e27\u5931\u9501\uff0c\u7269\u7406\u4f4d\u7f6e\uff1a\u673a\u67b6:1,\u673a\u6846:1,\u69fd\u4f4d:3,\u5b50\u5355\u5143:1", "time": "8/11 11:35", "duration": "1\u5206\u949f", "aid": 9, "point_type": "BS8800"}, {"alert_type": "\u8bbe\u5907\u544a\u8b66", "level": 2, "content": "\u544a\u8b66\u63cf\u8ff0\uff1a\u8f7d\u6ce2\u4f4e\u529f\u7387\u9884\u544a\u8b66\u3002\uff0c\u539f\u56e0\u63cf\u8ff0\uff1a\u914d\u7f6e\u5728TRX Path 2\u4e0a\u7684\u8f7d\u9891\u4f4e\u529f\u7387\uff0c\u7269\u7406\u4f4d\u7f6e\uff1a\u673a\u67b6:1,\u673a\u6846:1,\u69fd\u4f4d:3,\u5b50\u5355\u5143:1", "time": "8/11 11:54", "duration": "1\u5206\u949f", "aid": 10, "point_type": "BS8800"}, {"alert_type": "\u8bbe\u5907\u544a\u8b66", "level": 2, "content": "\u544a\u8b66\u63cf\u8ff0\uff1aBTS\u6389\u7ad9\uff0c\u539f\u56e0\u63cf\u8ff0\uff1aBSC\u548cBTS\u4e4b\u95f4\u8fde\u63a5\u65ad\u5f00\uff0c\u7269\u7406\u4f4d\u7f6e\uff1a\u65e0", "time": "8/11 11:38", "duration": "52\u79d2", "aid": 11, "point_type": "BS8800"}, {"alert_type": "\u8bbe\u5907\u544a\u8b66", "level": 2, "content": "\u544a\u8b66\u63cf\u8ff0\uff1a\u672a\u63a2\u6d4b\u5230CHM\uff0c\u539f\u56e0\u63cf\u8ff0\uff1a\u65e0\uff0c\u7269\u7406\u4f4d\u7f6e\uff1a\u673a\u67b6:1,\u673a\u6846:2,\u69fd\u4f4d:8", "time": "8/11 11:56", "duration": "43\u79d2", "aid": 12, "point_type": "CBTS I2"}, {"alert_type": "\u8bbe\u5907\u544a\u8b66", "level": 2, "content": "\u544a\u8b66\u63cf\u8ff0\uff1a\u5149\u53e3\u5149\u6a21\u5757\u65e0\u5149\uff0c\u539f\u56e0\u63cf\u8ff0\uff1a\u5149\u53e31\uff0c\u7269\u7406\u4f4d\u7f6e\uff1a\u673a\u67b6:1,\u673a\u6846:1,\u69fd\u4f4d:4,\u5b50\u5355\u5143:1", "time": "8/11 11:38", "duration": "27\u79d2", "aid": 13, "point_type": "BS8800"}, {"alert_type": "\u8bbe\u5907\u544a\u8b66", "level": 2, "content": "\u544a\u8b66\u63cf\u8ff0\uff1a\u4fe1\u9053\u4e0b\u884c\u5e27\u5931\u9501\uff0c\u539f\u56e0\u63cf\u8ff0\uff1aCH1\u4e0b\u884c\u5e27\u5931\u9501\uff0c\u7269\u7406\u4f4d\u7f6e\uff1a\u673a\u67b6:1,\u673a\u6846:1,\u69fd\u4f4d:3,\u5b50\u5355\u5143:1", "time": "8/11 11:35", "duration": "1\u5206\u949f", "aid": 14, "point_type": "BS8800"}, {"alert_type": "\u8bbe\u5907\u544a\u8b66", "level": 2, "content": "\u544a\u8b66\u63cf\u8ff0\uff1a\u8f7d\u6ce2\u4f4e\u529f\u7387\u9884\u544a\u8b66\u3002\uff0c\u539f\u56e0\u63cf\u8ff0\uff1a\u914d\u7f6e\u5728TRX Path 2\u4e0a\u7684\u8f7d\u9891\u4f4e\u529f\u7387\uff0c\u7269\u7406\u4f4d\u7f6e\uff1a\u673a\u67b6:1,\u673a\u6846:1,\u69fd\u4f4d:3,\u5b50\u5355\u5143:1", "time": "8/11 11:54", "duration": "1\u5206\u949f", "aid": 15, "point_type": "BS8800"}, {"alert_type": "\u8bbe\u5907\u544a\u8b66", "level": 3, "content": "\u544a\u8b66\u63cf\u8ff0\uff1aBTS\u6389\u7ad9\uff0c\u539f\u56e0\u63cf\u8ff0\uff1aBSC\u548cBTS\u4e4b\u95f4\u8fde\u63a5\u65ad\u5f00\uff0c\u7269\u7406\u4f4d\u7f6e\uff1a\u65e0", "time": "8/11 11:38", "duration": "52\u79d2", "aid": 16, "point_type": "BS8800"}, {"alert_type": "\u8bbe\u5907\u544a\u8b66", "level": 3, "content": "\u544a\u8b66\u63cf\u8ff0\uff1a\u672a\u63a2\u6d4b\u5230CHM\uff0c\u539f\u56e0\u63cf\u8ff0\uff1a\u65e0\uff0c\u7269\u7406\u4f4d\u7f6e\uff1a\u673a\u67b6:1,\u673a\u6846:2,\u69fd\u4f4d:8", "time": "8/11 11:56", "duration": "43\u79d2", "aid": 17, "point_type": "CBTS I2"}, {"alert_type": "\u8bbe\u5907\u544a\u8b66", "level": 3, "content": "\u544a\u8b66\u63cf\u8ff0\uff1a\u5149\u53e3\u5149\u6a21\u5757\u65e0\u5149\uff0c\u539f\u56e0\u63cf\u8ff0\uff1a\u5149\u53e31\uff0c\u7269\u7406\u4f4d\u7f6e\uff1a\u673a\u67b6:1,\u673a\u6846:1,\u69fd\u4f4d:4,\u5b50\u5355\u5143:1", "time": "8/11 11:38", "duration": "27\u79d2", "aid": 18, "point_type": "BS8800"}, {"alert_type": "\u8bbe\u5907\u544a\u8b66", "level": 3, "content": "\u544a\u8b66\u63cf\u8ff0\uff1a\u4fe1\u9053\u4e0b\u884c\u5e27\u5931\u9501\uff0c\u539f\u56e0\u63cf\u8ff0\uff1aCH1\u4e0b\u884c\u5e27\u5931\u9501\uff0c\u7269\u7406\u4f4d\u7f6e\uff1a\u673a\u67b6:1,\u673a\u6846:1,\u69fd\u4f4d:3,\u5b50\u5355\u5143:1", "time": "8/11 11:35", "duration": "1\u5206\u949f", "aid": 19, "point_type": "BS8800"}, {"alert_type": "\u8bbe\u5907\u544a\u8b66", "level": 3, "content": "\u544a\u8b66\u63cf\u8ff0\uff1a\u8f7d\u6ce2\u4f4e\u529f\u7387\u9884\u544a\u8b66\u3002\uff0c\u539f\u56e0\u63cf\u8ff0\uff1a\u914d\u7f6e\u5728TRX Path 2\u4e0a\u7684\u8f7d\u9891\u4f4e\u529f\u7387\uff0c\u7269\u7406\u4f4d\u7f6e\uff1a\u673a\u67b6:1,\u673a\u6846:1,\u69fd\u4f4d:3,\u5b50\u5355\u5143:1", "time": "8/11 11:54", "duration": "1\u5206\u949f", "aid": 20, "point_type": "BS8800"}, {"alert_type": "", "level": 0, "content": "", "time": "", "duration": "", "aid": 21, "point_type": ""}, {"alert_type": "", "level": 0, "content": "", "time": "", "duration": "", "aid": 22, "point_type": ""}, {"alert_type": "", "level": 0, "content": "", "time": "", "duration": "", "aid": 23, "point_type": ""}, {"alert_type": "", "level": 0, "content": "", "time": "", "duration": "", "aid": 24, "point_type": ""}], "chart": [[143, 89, 34, 40, 86, 18, 50, 30, 54, 34, 44, 22], [40, 50, 80, 30, 70, 75, 60, 40, 32, 43, 23, 56]], "l2_num": 14, "l3_num": 6, "l1_num": 1, "undone_num": 19}
+{
+    "done_num": 2,
+    "alerts": [{
+        "alert_type": "\u8bbe\u5907\u544a\u8b66",
+        "level": 1,
+        "content": "\u544a\u8b66\u63cf\u8ff0\uff1aBTS\u6389\u7ad9\uff0c\u539f\u56e0\u63cf\u8ff0\uff1aBSC\u548cBTS\u4e4b\u95f4\u8fde\u63a5\u65ad\u5f00\uff0c\u7269\u7406\u4f4d\u7f6e\uff1a\u65e0",
+        "time": "8/11 11:38",
+        "duration": "52\u79d2",
+        "aid": 1,
+        "point_type": "BS8800"
+    }, {
+        "alert_type": "\u8bbe\u5907\u544a\u8b66",
+        "level": 2,
+        "content": "\u544a\u8b66\u63cf\u8ff0\uff1a\u672a\u63a2\u6d4b\u5230CHM\uff0c\u539f\u56e0\u63cf\u8ff0\uff1a\u65e0\uff0c\u7269\u7406\u4f4d\u7f6e\uff1a\u673a\u67b6:1,\u673a\u6846:2,\u69fd\u4f4d:8",
+        "time": "8/11 11:56",
+        "duration": "43\u79d2",
+        "aid": 2,
+        "point_type": "CBTS I2"
+    }, {
+        "alert_type": "\u8bbe\u5907\u544a\u8b66",
+        "level": 2,
+        "content": "\u544a\u8b66\u63cf\u8ff0\uff1a\u5149\u53e3\u5149\u6a21\u5757\u65e0\u5149\uff0c\u539f\u56e0\u63cf\u8ff0\uff1a\u5149\u53e31\uff0c\u7269\u7406\u4f4d\u7f6e\uff1a\u673a\u67b6:1,\u673a\u6846:1,\u69fd\u4f4d:4,\u5b50\u5355\u5143:1",
+        "time": "8/11 11:38",
+        "duration": "27\u79d2",
+        "aid": 3,
+        "point_type": "BS8800"
+    }, {
+        "alert_type": "\u8bbe\u5907\u544a\u8b66",
+        "level": 2,
+        "content": "\u544a\u8b66\u63cf\u8ff0\uff1a\u4fe1\u9053\u4e0b\u884c\u5e27\u5931\u9501\uff0c\u539f\u56e0\u63cf\u8ff0\uff1aCH1\u4e0b\u884c\u5e27\u5931\u9501\uff0c\u7269\u7406\u4f4d\u7f6e\uff1a\u673a\u67b6:1,\u673a\u6846:1,\u69fd\u4f4d:3,\u5b50\u5355\u5143:1",
+        "time": "8/11 11:35",
+        "duration": "1\u5206\u949f",
+        "aid": 4,
+        "point_type": "BS8800"
+    }, {
+        "alert_type": "\u8bbe\u5907\u544a\u8b66",
+        "level": 2,
+        "content": "\u544a\u8b66\u63cf\u8ff0\uff1a\u8f7d\u6ce2\u4f4e\u529f\u7387\u9884\u544a\u8b66\u3002\uff0c\u539f\u56e0\u63cf\u8ff0\uff1a\u914d\u7f6e\u5728TRX Path 2\u4e0a\u7684\u8f7d\u9891\u4f4e\u529f\u7387\uff0c\u7269\u7406\u4f4d\u7f6e\uff1a\u673a\u67b6:1,\u673a\u6846:1,\u69fd\u4f4d:3,\u5b50\u5355\u5143:1",
+        "time": "8/11 11:54",
+        "duration": "1\u5206\u949f",
+        "aid": 5,
+        "point_type": "BS8800"
+    }, {
+        "alert_type": "\u8bbe\u5907\u544a\u8b66",
+        "level": 2,
+        "content": "\u544a\u8b66\u63cf\u8ff0\uff1aBTS\u6389\u7ad9\uff0c\u539f\u56e0\u63cf\u8ff0\uff1aBSC\u548cBTS\u4e4b\u95f4\u8fde\u63a5\u65ad\u5f00\uff0c\u7269\u7406\u4f4d\u7f6e\uff1a\u65e0",
+        "time": "8/11 11:38",
+        "duration": "52\u79d2",
+        "aid": 6,
+        "point_type": "BS8800"
+    }, {
+        "alert_type": "\u8bbe\u5907\u544a\u8b66",
+        "level": 2,
+        "content": "\u544a\u8b66\u63cf\u8ff0\uff1a\u672a\u63a2\u6d4b\u5230CHM\uff0c\u539f\u56e0\u63cf\u8ff0\uff1a\u65e0\uff0c\u7269\u7406\u4f4d\u7f6e\uff1a\u673a\u67b6:1,\u673a\u6846:2,\u69fd\u4f4d:8",
+        "time": "8/11 11:56",
+        "duration": "43\u79d2",
+        "aid": 7,
+        "point_type": "CBTS I2"
+    }, {
+        "alert_type": "\u8bbe\u5907\u544a\u8b66",
+        "level": 2,
+        "content": "\u544a\u8b66\u63cf\u8ff0\uff1a\u5149\u53e3\u5149\u6a21\u5757\u65e0\u5149\uff0c\u539f\u56e0\u63cf\u8ff0\uff1a\u5149\u53e31\uff0c\u7269\u7406\u4f4d\u7f6e\uff1a\u673a\u67b6:1,\u673a\u6846:1,\u69fd\u4f4d:4,\u5b50\u5355\u5143:1",
+        "time": "8/11 11:38",
+        "duration": "27\u79d2",
+        "aid": 8,
+        "point_type": "BS8800"
+    }, {
+        "alert_type": "\u8bbe\u5907\u544a\u8b66",
+        "level": 2,
+        "content": "\u544a\u8b66\u63cf\u8ff0\uff1a\u4fe1\u9053\u4e0b\u884c\u5e27\u5931\u9501\uff0c\u539f\u56e0\u63cf\u8ff0\uff1aCH1\u4e0b\u884c\u5e27\u5931\u9501\uff0c\u7269\u7406\u4f4d\u7f6e\uff1a\u673a\u67b6:1,\u673a\u6846:1,\u69fd\u4f4d:3,\u5b50\u5355\u5143:1",
+        "time": "8/11 11:35",
+        "duration": "1\u5206\u949f",
+        "aid": 9,
+        "point_type": "BS8800"
+    }, {
+        "alert_type": "\u8bbe\u5907\u544a\u8b66",
+        "level": 2,
+        "content": "\u544a\u8b66\u63cf\u8ff0\uff1a\u8f7d\u6ce2\u4f4e\u529f\u7387\u9884\u544a\u8b66\u3002\uff0c\u539f\u56e0\u63cf\u8ff0\uff1a\u914d\u7f6e\u5728TRX Path 2\u4e0a\u7684\u8f7d\u9891\u4f4e\u529f\u7387\uff0c\u7269\u7406\u4f4d\u7f6e\uff1a\u673a\u67b6:1,\u673a\u6846:1,\u69fd\u4f4d:3,\u5b50\u5355\u5143:1",
+        "time": "8/11 11:54",
+        "duration": "1\u5206\u949f",
+        "aid": 10,
+        "point_type": "BS8800"
+    }, {
+        "alert_type": "\u8bbe\u5907\u544a\u8b66",
+        "level": 2,
+        "content": "\u544a\u8b66\u63cf\u8ff0\uff1aBTS\u6389\u7ad9\uff0c\u539f\u56e0\u63cf\u8ff0\uff1aBSC\u548cBTS\u4e4b\u95f4\u8fde\u63a5\u65ad\u5f00\uff0c\u7269\u7406\u4f4d\u7f6e\uff1a\u65e0",
+        "time": "8/11 11:38",
+        "duration": "52\u79d2",
+        "aid": 11,
+        "point_type": "BS8800"
+    }, {
+        "alert_type": "\u8bbe\u5907\u544a\u8b66",
+        "level": 2,
+        "content": "\u544a\u8b66\u63cf\u8ff0\uff1a\u672a\u63a2\u6d4b\u5230CHM\uff0c\u539f\u56e0\u63cf\u8ff0\uff1a\u65e0\uff0c\u7269\u7406\u4f4d\u7f6e\uff1a\u673a\u67b6:1,\u673a\u6846:2,\u69fd\u4f4d:8",
+        "time": "8/11 11:56",
+        "duration": "43\u79d2",
+        "aid": 12,
+        "point_type": "CBTS I2"
+    }, {
+        "alert_type": "\u8bbe\u5907\u544a\u8b66",
+        "level": 2,
+        "content": "\u544a\u8b66\u63cf\u8ff0\uff1a\u5149\u53e3\u5149\u6a21\u5757\u65e0\u5149\uff0c\u539f\u56e0\u63cf\u8ff0\uff1a\u5149\u53e31\uff0c\u7269\u7406\u4f4d\u7f6e\uff1a\u673a\u67b6:1,\u673a\u6846:1,\u69fd\u4f4d:4,\u5b50\u5355\u5143:1",
+        "time": "8/11 11:38",
+        "duration": "27\u79d2",
+        "aid": 13,
+        "point_type": "BS8800"
+    }, {
+        "alert_type": "\u8bbe\u5907\u544a\u8b66",
+        "level": 2,
+        "content": "\u544a\u8b66\u63cf\u8ff0\uff1a\u4fe1\u9053\u4e0b\u884c\u5e27\u5931\u9501\uff0c\u539f\u56e0\u63cf\u8ff0\uff1aCH1\u4e0b\u884c\u5e27\u5931\u9501\uff0c\u7269\u7406\u4f4d\u7f6e\uff1a\u673a\u67b6:1,\u673a\u6846:1,\u69fd\u4f4d:3,\u5b50\u5355\u5143:1",
+        "time": "8/11 11:35",
+        "duration": "1\u5206\u949f",
+        "aid": 14,
+        "point_type": "BS8800"
+    }, {
+        "alert_type": "\u8bbe\u5907\u544a\u8b66",
+        "level": 2,
+        "content": "\u544a\u8b66\u63cf\u8ff0\uff1a\u8f7d\u6ce2\u4f4e\u529f\u7387\u9884\u544a\u8b66\u3002\uff0c\u539f\u56e0\u63cf\u8ff0\uff1a\u914d\u7f6e\u5728TRX Path 2\u4e0a\u7684\u8f7d\u9891\u4f4e\u529f\u7387\uff0c\u7269\u7406\u4f4d\u7f6e\uff1a\u673a\u67b6:1,\u673a\u6846:1,\u69fd\u4f4d:3,\u5b50\u5355\u5143:1",
+        "time": "8/11 11:54",
+        "duration": "1\u5206\u949f",
+        "aid": 15,
+        "point_type": "BS8800"
+    }, {
+        "alert_type": "\u8bbe\u5907\u544a\u8b66",
+        "level": 3,
+        "content": "\u544a\u8b66\u63cf\u8ff0\uff1aBTS\u6389\u7ad9\uff0c\u539f\u56e0\u63cf\u8ff0\uff1aBSC\u548cBTS\u4e4b\u95f4\u8fde\u63a5\u65ad\u5f00\uff0c\u7269\u7406\u4f4d\u7f6e\uff1a\u65e0",
+        "time": "8/11 11:38",
+        "duration": "52\u79d2",
+        "aid": 16,
+        "point_type": "BS8800"
+    }, {
+        "alert_type": "\u8bbe\u5907\u544a\u8b66",
+        "level": 3,
+        "content": "\u544a\u8b66\u63cf\u8ff0\uff1a\u672a\u63a2\u6d4b\u5230CHM\uff0c\u539f\u56e0\u63cf\u8ff0\uff1a\u65e0\uff0c\u7269\u7406\u4f4d\u7f6e\uff1a\u673a\u67b6:1,\u673a\u6846:2,\u69fd\u4f4d:8",
+        "time": "8/11 11:56",
+        "duration": "43\u79d2",
+        "aid": 17,
+        "point_type": "CBTS I2"
+    }, {
+        "alert_type": "\u8bbe\u5907\u544a\u8b66",
+        "level": 3,
+        "content": "\u544a\u8b66\u63cf\u8ff0\uff1a\u5149\u53e3\u5149\u6a21\u5757\u65e0\u5149\uff0c\u539f\u56e0\u63cf\u8ff0\uff1a\u5149\u53e31\uff0c\u7269\u7406\u4f4d\u7f6e\uff1a\u673a\u67b6:1,\u673a\u6846:1,\u69fd\u4f4d:4,\u5b50\u5355\u5143:1",
+        "time": "8/11 11:38",
+        "duration": "27\u79d2",
+        "aid": 18,
+        "point_type": "BS8800"
+    }, {
+        "alert_type": "\u8bbe\u5907\u544a\u8b66",
+        "level": 3,
+        "content": "\u544a\u8b66\u63cf\u8ff0\uff1a\u4fe1\u9053\u4e0b\u884c\u5e27\u5931\u9501\uff0c\u539f\u56e0\u63cf\u8ff0\uff1aCH1\u4e0b\u884c\u5e27\u5931\u9501\uff0c\u7269\u7406\u4f4d\u7f6e\uff1a\u673a\u67b6:1,\u673a\u6846:1,\u69fd\u4f4d:3,\u5b50\u5355\u5143:1",
+        "time": "8/11 11:35",
+        "duration": "1\u5206\u949f",
+        "aid": 19,
+        "point_type": "BS8800"
+    }, {
+        "alert_type": "\u8bbe\u5907\u544a\u8b66",
+        "level": 3,
+        "content": "\u544a\u8b66\u63cf\u8ff0\uff1a\u8f7d\u6ce2\u4f4e\u529f\u7387\u9884\u544a\u8b66\u3002\uff0c\u539f\u56e0\u63cf\u8ff0\uff1a\u914d\u7f6e\u5728TRX Path 2\u4e0a\u7684\u8f7d\u9891\u4f4e\u529f\u7387\uff0c\u7269\u7406\u4f4d\u7f6e\uff1a\u673a\u67b6:1,\u673a\u6846:1,\u69fd\u4f4d:3,\u5b50\u5355\u5143:1",
+        "time": "8/11 11:54",
+        "duration": "1\u5206\u949f",
+        "aid": 20,
+        "point_type": "BS8800"
+    }, {
+        "alert_type": "",
+        "level": 0,
+        "content": "",
+        "time": "",
+        "duration": "",
+        "aid": 21,
+        "point_type": ""
+    }, {
+        "alert_type": "",
+        "level": 0,
+        "content": "",
+        "time": "",
+        "duration": "",
+        "aid": 22,
+        "point_type": ""
+    }, {
+        "alert_type": "",
+        "level": 0,
+        "content": "",
+        "time": "",
+        "duration": "",
+        "aid": 23,
+        "point_type": ""
+    }, {
+        "alert_type": "",
+        "level": 0,
+        "content": "",
+        "time": "",
+        "duration": "",
+        "aid": 24,
+        "point_type": ""
+    }],
+    "chart": [
+        [143, 89, 34, 40, 86, 18, 50, 30, 54, 34, 44, 22],
+        [40, 50, 80, 30, 70, 75, 60, 40, 32, 43, 23, 56]
+    ],
+    "l2_num": 14,
+    "l3_num": 6,
+    "l1_num": 1,
+    "undone_num": 19
+}

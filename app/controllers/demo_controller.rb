@@ -58,7 +58,16 @@ class DemoController < ApplicationController
   end
   
   def alert_data
-    redirect_to "/demo/data/alert-#{params[:type]}.json"
+    if params[:static]
+      redirect_to "/demo/data/alert-#{params[:type]}.json"
+    else
+      require "#{Rails.root}/lib/demo/alerts.rb"
+      
+      respond_to do |format|
+        format.html # FIXME should redirect back
+        format.json { render :json => AlertData.load_data(params[:type]) }
+      end
+    end
   end
   
   def kpi_data

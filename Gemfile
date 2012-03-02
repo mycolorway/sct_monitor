@@ -46,3 +46,4 @@ gem 'therubyracer'
 gem 'seed-fu'#, '~> 2.1.0'
 
 gem 'em-websocket'
+gem 'spreadsheet'
