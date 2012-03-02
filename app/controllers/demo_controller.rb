@@ -53,8 +53,17 @@ class DemoController < ApplicationController
     end
   end
   
-  def wlan_data
-    redirect_to '/demo/data/wlan.json'
+  def wlan_data    
+    if params[:static]
+      redirect_to '/demo/data/wlan.json'
+    else
+      require "#{Rails.root}/lib/demo/wlan.rb"
+      
+      respond_to do |format|
+        format.html # FIXME should redirect back
+        format.json { render :json => WlanData.load_data }
+      end
+    end
   end
   
   def alert_data
