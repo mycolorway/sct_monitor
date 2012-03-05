@@ -5,13 +5,14 @@
   <meta content="yes" name="apple-mobile-web-app-capable" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, 
                                  maximum-scale=1.0, user-scalable=0;">
+  <%= csrf_meta_tags %>
   <title><%= yield :title %> - PowerMatrix</title>
   
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= yield :styles %>
   <%= javascript_include_tag "application" %>
   <%= yield :scripts %>
-  <%= csrf_meta_tags %>
+  <%= render 'matrices/in_page_scripts' %>
 </head>
 <body>
 

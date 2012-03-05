@@ -18,3 +18,12 @@
 
 
 //= //require_tree .
+(function($){
+    var _csrftoken = $('meta[name="csrf-token"]').attr('content');
+    
+    if(!_csrftoken){throw 'csrf token not found';}
+    
+    $(document).ajaxSend(function(evt, xhr, settings) {
+        xhr.setRequestHeader('X-CSRF-Token', _csrftoken);
+    });
+})(jQuery);
