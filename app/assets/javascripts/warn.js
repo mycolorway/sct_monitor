@@ -10,50 +10,18 @@ var marqueeStart = [];
 var dominoTimer;
 
 $(function() {
-    $.ajax({
+    init();
+});
+
+function init() {
+	$.ajax({
         url: "/data/get/alert/0/",
         type: "POST",
         dataType: "json",
         success: function( result ) {
             window.Data = dataCache[0] = result;
-
-            if ( userType == 0 ) {
-                //普通用户
-            } else if ( userType == 1 ) {
-                //大屏
-                connect();
-            } else if ( userType == 2 ) {
-                //控制者
-                $( "#controller" ).click( function( e ) {
-                    e.preventDefault();
-
-                    connect();
-
-                    $( ".warn-nav span" ).click( function( e ) {
-                        var index = $( e.target ).attr( "index" );
-                        
-                        sendCommand({
-                            "isFun": true,
-                            "method": "$('.warn-nav span[index=" + index + "]').click()"
-                        });
-                    });
-                });
-
-                $( "#viewer" ).click( function( e ) {
-                    e.preventDefault();
-
-                    if ( !(socket && socket.readyState == 1 )) {
-                        return;
-                    }
-
-                    var t = setInterval( function() {
-                        if ( socket.bufferedAmount == 0 ) {
-                            socket.close();
-                            clearInterval( t );
-                        }
-                    }, 50);
-                });
-            }
+            
+			ws.connect();
 
             initStart();
 
@@ -78,7 +46,26 @@ $(function() {
             dataCache[2] = result;
         }
     });
-});
+}
+
+ws.oncontrol = function() {
+	$( '.warn-nav span' ).click(function(e) {
+		var index = $( e.target ).attr('index'),
+			json = {
+				'method': 'command',
+				'data': {
+					'isFun': true,
+					'method': '$(".warn-nav span[index=' + index + ']").click()'
+				}
+			};
+		
+		ws.inst.send( JSON.stringify(json) );
+	});
+}
+
+ws.oncontroloff = function() {
+	$( '.warn-nav span' ).unbind('click');
+}
 
 window.initStart = function() {
     renderSummary();

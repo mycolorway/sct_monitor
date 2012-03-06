@@ -4,7 +4,6 @@ var boardTimer;
 var underControl = false;
 var bindClick;
 
-
 $( function() {
     bindClick = isIpad? "tap" : "click";
 
@@ -21,13 +20,20 @@ $( function() {
 
             initBoard();
 
-            initControl();
+            ws.connect();
 
             initStart();
         }
     });
 });
 
+ws.oncontrol = function() {
+	initStop();
+}
+
+ws.oncontroloff = function() {
+	initStart();
+}
 
 function initBoard() {
     $( ".board" ).bind( bindClick, function( e ) {
@@ -83,80 +89,6 @@ function initBoard() {
     });
 }
 
-function initControl() {
-    $( "#controller" ).bind( "click", function( e ) {
-        initStop();
-    });
-
-    $( "#viewer" ).bind( "click", function( e ) {
-        initStart();
-    });
-
-    if ( userType == 0 ) {
-        //普通用户
-        /*
-        $( "#controller" ).click( function( e ) {
-            initStop();
-        });
-
-        $( "#viewer" ).click( function( e ) {
-            initStart();
-        });
-        */
-
-    } else if ( userType == 1 ) {
-        //大屏
-        connect();
-
-    } else if ( userType == 2 ) {
-        //控制者
-        /*
-        $( "#controller" ).click( function( e ) {
-            e.preventDefault();
-
-            connect(function() {
-                initStop();
-                sendCommand({
-                    "isFun": true,
-                    "method": "initStop()"
-                });
-            });
-
-            $( "#today-online li" ).click( function( e ) {
-                var city = $( e.currentTarget ).find( "span.city" ).attr( "city" );
-                
-                switchCity( city );
-                sendCommand({
-                    "isFun": true,
-                    "method": "switchCity(" + city + ")"
-                });
-            });
-        });
-
-        $( "#viewer" ).click( function( e ) {
-            e.preventDefault();
-
-            if ( !(socket && socket.readyState == 1 )) {
-                return;
-            }
-
-            initStart();
-            sendCommand({
-                "isFun": true,
-                "method": "initStart()"
-            });
-
-            var t = setInterval( function() {
-                if ( socket.bufferedAmount == 0 ) {
-                    socket.close();
-                    clearInterval( t );
-                }
-            }, 50);
-
-        });
-        */
-    }
-}
 
 function minBoard( $el ) {
     if ( !$el ) {

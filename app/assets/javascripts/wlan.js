@@ -2,90 +2,59 @@
 
 $(function() {
 
-    $.ajax({
+	init();
+
+});
+
+function init() {
+	$.ajax({
         url: "/data/get/wlan/",
         type: "POST",
         dataType: "json",
         success: function( result ) {
             window.Data = result;
 
-            if ( userType == 0 ) {
-                //普通用户
-                //
-                $( "#controller" ).click( function( e ) {
-                    initStop();
-                });
-
-                $( "#viewer" ).click( function( e ) {
-                    initStart();
-                });
-
-            } else if ( userType == 1 ) {
-                //大屏
-                connect();
-
-            } else if ( userType == 2 ) {
-                //控制者
-                $( "#controller" ).click( function( e ) {
-                    e.preventDefault();
-
-                    connect(function() {
-                        initStop();
-                        sendCommand({
-                            "isFun": true,
-                            "method": "initStop()"
-                        });
-                    });
-
-                    $( "#today-online li" ).click( function( e ) {
-                        var city = $( e.currentTarget ).find( "span.city" ).attr( "city" );
-                        
-                        switchCity( city );
-                        sendCommand({
-                            "isFun": true,
-                            "method": "switchCity(" + city + ")"
-                        });
-                    });
-                });
-
-                $( "#viewer" ).click( function( e ) {
-                    e.preventDefault();
-
-                    if ( !(socket && socket.readyState == 1 )) {
-                        return;
-                    }
-
-                    initStart();
-                    sendCommand({
-                        "isFun": true,
-                        "method": "initStart()"
-                    });
-
-                    var t = setInterval( function() {
-                        if ( socket.bufferedAmount == 0 ) {
-                            socket.close();
-                            clearInterval( t );
-                        }
-                    }, 50);
-
-                });
-            }
+			ws.connect();
 
             initStart();
         }
     });
     
     initTodayOnline();
-   
-    /*
-    $( "#test" ).click( function() {
-        var data = getRandomOnline();
-        onlineChart.series[0].setData(data[0]);
-        onlineChart.series[1].setData(data[1]);
-        onlineChart.redraw();
-    });
-    */
-});
+}
+
+ws.oncontrol = function() {
+	initStop();
+
+	var json = {
+        'method': 'command',
+        'data': {
+			'isFun': true,
+			'method': "initStop()"
+		}
+    };
+
+	ws.inst.send( JSON.stringify(json) );
+
+	$( '#today-online li' ).click(function( e ) {
+		var city = $( e.currentTarget ).find('span.city').attr('city'),
+			json = {
+				'method': 'command',
+				'data': {
+					'isFun': true,
+					'method': 'switchCity(' + city + ')'
+				}
+			};
+		
+		switchCity(city);
+		ws.inst.send( JSON.stringify(json) );
+	});
+}
+
+ws.oncontroloff = function() {
+	initStart();
+	$( '#today-online li' ).unbind('click');
+}
 
 window.initStart = function() {
     reDrawBar( getTodayOnline() );
@@ -136,7 +105,7 @@ var cities = [
     "巴中市"
 ];
 
-window.switchCity = function( city ) {
+window.switchCity = function(city) {
     var $next;
     
     if ( city >= 0 ) {

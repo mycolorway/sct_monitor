@@ -27,3 +27,5 @@
         xhr.setRequestHeader('X-CSRF-Token', _csrftoken);
     });
 })(jQuery);
+
+var isIpad = navigator.userAgent.match(/iPad/i) ? true : false;

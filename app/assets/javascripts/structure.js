@@ -9,9 +9,7 @@ $(function() {
 
     initCE();
 
-    if ( userType == 1 ) {
-        connect();
-    }
+	ws.connect();
 });
 
 function initEllipse() {

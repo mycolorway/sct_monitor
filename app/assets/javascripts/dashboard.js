@@ -1,31 +1,15 @@
 (function( $ ) {
 
-window.isIPad = navigator.userAgent.match(/iPad/i) ? true : false;
-
 $( function() {
 
-    $( ".dashboard-wrapper" ).height( $( window ).height());
+    $( '.dashboard-wrapper' ).height($( window ).height());
+	$( '.dashboard-item' ).bind(isIpad ? 'touchstart tap' : 'mousedown', screenSelect);
+	ws.connect();
 
-    if ( userType == 1 ) {
-
-        connect();
-
-    } else if ( userType == 2 ) {
-        //控制者
-        $( ".dashboard-item" ).bind( isIPad ? "touchstart" : "mousedown", screenSelect );
-
-        if ( isIPad ) {
-            $( ".dashboard-item" ).bind( "tap", screenSelect );
-        }        
-
-        connect();
-    }
-    
 });
 
 function screenSelect( e ) {
     e.preventDefault();
-
     
     var target = $( e.currentTarget ),
         eData = {
@@ -34,11 +18,11 @@ function screenSelect( e ) {
         };
        
     if ( isIPad ) {
-        target.one( "touchend.dashboard", selectStop );
-        target.bind( "touchmove.dashboard", eData, moveStart );
+        target.one( 'touchend.dashboard', selectStop );
+        target.bind( 'touchmove.dashboard', eData, moveStart );
     } else {
-        target.one( "mouseup.dashboard", selectStop );
-        target.bind( "mousemove.dashboard", eData, moveStart );
+        target.one( 'mouseup.dashboard', selectStop );
+        target.bind( 'mousemove.dashboard', eData, moveStart );
     }
 }
 
@@ -59,66 +43,66 @@ function moveStart( e ) {
     var eventData = {
         originX: e.data.pageX,
         originY: e.data.pageY,
-        originLeft: parseInt( target.css( "left" )) + pageX - target.offset().left - 100,
-        originTop: parseInt( target.css( "top" )) + pageY - target.offset().top - 75,
+        originLeft: parseInt( target.css( 'left' )) + pageX - target.offset().left - 100,
+        originTop: parseInt( target.css( 'top' )) + pageY - target.offset().top - 75,
         pointers: []
     };
 
-    target.siblings( ".dashboard-item" ).each( function( i, o ) {
+    target.siblings( '.dashboard-item' ).each( function( i, o ) {
         var $this = $( this ),
             pos = $this.position();
 
         eventData.pointers.push({
-            "id": this.id,
-            "x": pos.left,
-            "y": pos.top
+            'id': this.id,
+            'x': pos.left,
+            'y': pos.top
         });
     });
 
     var clone = target.clone( false );
 
-    clone.appendTo( ".dashboard-nav" ).addClass( "holder" );
+    clone.appendTo( '.dashboard-nav' ).addClass( 'holder' );
 
     target.css({
-        "left": eventData.originLeft,
-        "top": eventData.originTop
-    }).addClass( "dragging" );
+        'left': eventData.originLeft,
+        'top': eventData.originTop
+    }).addClass( 'dragging' );
 
     if ( isIPad ) {
-        target.unbind( "touchend.dashboard" )
-            .unbind( "touchmove.dashboard" );
+        target.unbind( 'touchend.dashboard' )
+            .unbind( 'touchmove.dashboard' );
 
-        target.bind( "touchmove.dashboard", eventData, move );
-        target.one( "touchend.dashboard", moved );
+        target.bind( 'touchmove.dashboard', eventData, move );
+        target.one( 'touchend.dashboard', moved );
     } else {
-        target.unbind( "mouseup.dashboard" )
-            .unbind( "mousemove.dashboard" );
+        target.unbind( 'mouseup.dashboard' )
+            .unbind( 'mousemove.dashboard' );
 
-        target.bind( "mousemove.dashboard", eventData, move );
-        target.one( "mouseup.dashboard", moved );
+        target.bind( 'mousemove.dashboard', eventData, move );
+        target.one( 'mouseup.dashboard', moved );
     };
     
     function moved() {
 
-        clone.bind( isIPad ? "touchstart" : "mousedown", screenSelect );
+        clone.bind( isIPad ? 'touchstart' : 'mousedown', screenSelect );
 
         if ( isIPad ) {
-            clone.bind( "tap", screenSelect );
+            clone.bind( 'tap', screenSelect );
         }
     
-        clone.removeClass( "holder" );
+        clone.removeClass( 'holder' );
         target.remove();
 
-        var drop = $( ".dashboard-item.drop" );
+        var drop = $( '.dashboard-item.drop' );
 
         if ( !drop.length ) { 
             return
         }
 
-        drop.removeClass( "drop" );
+        drop.removeClass( 'drop' );
 
-        var originEl = clone.find( "a" ),
-            dropEl = drop.find( "a" );
+        var originEl = clone.find( 'a' ),
+            dropEl = drop.find( 'a' );
 
         dropEl.hide();
 
@@ -131,22 +115,22 @@ function moveStart( e ) {
         dropEl.appendTo( clone ).delay(350).fadeIn( 300 );
                     
         var data = {
-            from_guid: clone.find( "a" ).attr( "guid" ),
-            to_guid: drop.find( "a" ).attr( "guid" )
+            from_guid: clone.find( 'a' ).attr( 'guid' ),
+            to_guid: drop.find( 'a' ).attr( 'guid' )
         };
 
         if ( userType == 2 ) {
             sendCommand({
-                "isFun": true,
-                "method": "changeScreen('" + data.from_guid + "', '" + data.to_guid + "')"
+                'isFun': true,
+                'method': 'changeScreen("' + data.from_guid + '", "' + data.to_guid + '")'
             });
         }
     
         $.ajax({
-            url: "/order/change/",
+            url: '/order/change/',
             data: data,
-            type: "POST",
-            dataType: "json",
+            type: 'POST',
+            dataType: 'json',
             success: function( result ) {
                 if ( result.success ) {
                     
@@ -185,31 +169,31 @@ function move( e ) {
         y0 = newTop + $this.height()/2;
 
     $this.css({
-        "left": newLeft,
-        "top": newTop
+        'left': newLeft,
+        'top': newTop
     });
 
     $.each( e.data.pointers, function( i, o ) {
-        var el = $( "#" + o.id ),
-            x1 = el.width()/2 + parseInt( el.css( "left" )),
-            y1 = el.height()/2 + parseInt( el.css( "top" ));
+        var el = $( '#' + o.id ),
+            x1 = el.width()/2 + parseInt( el.css( 'left' )),
+            y1 = el.height()/2 + parseInt( el.css( 'top' ));
 
         if ( isHover( x0, y0, x1, y1, Math.max(el.width()/2, $this.width()/2) )) {
-            if ( !el.hasClass( "drop" )) {
-                el.addClass( "drop" )
-                    .siblings( ".drop" ).removeClass( "drop" );
+            if ( !el.hasClass( 'drop' )) {
+                el.addClass( 'drop' )
+                    .siblings( '.drop' ).removeClass( 'drop' );
             }
             
             return
         } else {
-            el.removeClass( "drop" );
+            el.removeClass( 'drop' );
         }
     });
 }
 
 function selectStop( e ) {
     if( isIPad ) {
-        location.href = $( e.currentTarget ).find( "a" ).attr( "href" );
+        location.href = $( e.currentTarget ).find( 'a' ).attr( 'href' );
     }
 }
 

@@ -30,12 +30,12 @@ EventMachine.run {
               send_result ws, false, 'already has controller'
             elsif 'whosyourdaddy' == params['password']
               @controllers[channel.object_id] = sid
-              send_result ws, true
+              send_result ws, true, 'control on'
             else
               send_result ws, false, 'wrong controller password'
             end
           else
-            send_result ws
+            send_result ws, true
           end
           
         when 'control_on'
@@ -43,14 +43,14 @@ EventMachine.run {
             send_result ws, false, 'already has controller'
           elsif 'whosyourdaddy' == params['password']
             @controllers[channel.object_id] = sid
-            send_result ws, true
+            send_result ws, true, 'control on'
           else
             send_result ws, false, 'wrong controller password'
           end
           
         when 'control_off'
             @controllers.delete channel.object_id
-            send_result ws, true
+            send_result ws, true, 'control off'
           
         when 'command'
           if sid == @controllers[channel.object_id]

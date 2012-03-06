@@ -19,4 +19,4 @@ tmp
 logs
 log
 # local settings
-
+*.swp
