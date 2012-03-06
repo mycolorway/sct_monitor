@@ -25,8 +25,21 @@ EventMachine.run {
           channel = @channels[uid]
           sid = channel.subscribe { |msg| ws.send msg }
           
+          if params.has_key? 'password'
+            if @controllers.has_key? channel.object_id
+              send_result ws, false, 'already has controller'
+            elsif 'whosyourdaddy' == params['password']
+              @controllers[channel.object_id] = sid
+              send_result ws, true
+            else
+              send_result ws, false, 'wrong controller password'
+            end
+          else
+            send_result ws
+          end
+          
         when 'control_on'
-          if @controllers.has_key? channel.id
+          if @controllers.has_key? channel.object_id
             send_result ws, false, 'already has controller'
           elsif 'whosyourdaddy' == params['password']
             @controllers[channel.object_id] = sid
@@ -41,7 +54,7 @@ EventMachine.run {
           
         when 'command'
           if sid == @controllers[channel.object_id]
-            channel.push params['data']
+            channel.push JSON.dump(params['data'])
             send_result ws, true
           else
             send_result ws, false, 'this client is not controller'
