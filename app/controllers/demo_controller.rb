@@ -35,6 +35,21 @@ class DemoController < ApplicationController
     redirect_to :root
   end
   
+  def change_order # FIXME
+    m_from = Matrix.where(:guid=>params[:from_guid]).first!
+    m_to = Matrix.where(:guid=>params[:to_guid]).first!
+    
+    m_from.order, m_to.order = m_to.order, m_from.order
+    
+    m_from.save!
+    m_to.save!
+    
+    respond_to do |format|
+      format.html # FIXME
+      format.json { render :json => { :success=> true } }
+    end
+  end
+  
   def control_on
     session[:is_controller] = true
     

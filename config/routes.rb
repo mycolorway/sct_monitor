@@ -8,6 +8,9 @@ SctMonitor::Application.routes.draw do
   get 'demo/logout'
   match '/logout' => 'demo#logout'
   
+  post 'demo/change_order'
+  match '/order/change' => 'demo#change_order'
+  
   post 'demo/control_on'
   post 'demo/control_off'
   

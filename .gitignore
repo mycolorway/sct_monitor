@@ -10,6 +10,7 @@ migrations
 # db
 sqlite3.db
 data.txt
+db/*.sqlite3
 #data
 #db
 # folders
