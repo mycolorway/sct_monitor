@@ -25,7 +25,7 @@ EventMachine.run {
           channel = @channels[uid]
           sid = channel.subscribe { |msg| ws.send msg }
           
-          if params.has_key? 'password'
+          if params.has_key? 'password' # FIXME
             if @controllers.has_key? channel.object_id
               send_result ws, false, 'already has controller'
             elsif 'whosyourdaddy' == params['password']
