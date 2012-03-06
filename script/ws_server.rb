@@ -55,7 +55,7 @@ EventMachine.run {
         when 'command'
           if sid == @controllers[channel.object_id]
             channel.push JSON.dump(params['data'])
-            send_result ws, true
+# send_result ws, true
           else
             send_result ws, false, 'this client is not controller'
           end

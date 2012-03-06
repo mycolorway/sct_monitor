@@ -6,6 +6,9 @@
 
 <% content_for :scripts do %>
 <%= javascript_include_tag "jqtouch", 'socket', 'dashboard' %>
+<script>
+	var uid = '<%= session[:uid] %>';
+</script>
 <% end %>
 
 <div class="dashboard-wrapper">

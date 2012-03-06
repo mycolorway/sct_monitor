@@ -29,13 +29,17 @@ var ws = {
 	onopen: function() {
 		if ( ws.debug ) ws.print( 'Socket Status: ' + this.readyState + ' (open)');
 
-		debugger
 		var json = {
 			'method': 'register',
 			'uid': uid
 		}
 
 		if ( localStorage['iscontrol'] * 1 ) {
+			$( '#controller' ).parent()
+				.addClass('live')
+				.siblings('.live')
+				.removeClass('live');
+
 			json.password = ws.pw;
 		}
 		
@@ -43,7 +47,6 @@ var ws = {
 	},
 
 	onmessage: function( msg ) {
-				   debugger
 		var json = JSON.parse( msg.data );
 
 		if ( ws.debug ) ws.print( json );
@@ -61,6 +64,16 @@ var ws = {
 			if ( this.oncontrol && $.isFunction(this.oncontrol) ) this.oncontrol();
 			localStorage['iscontrol'] = ws.iscontrol = 1;
 			
+			return
+		}
+
+		if ( json.msg && json.msg == 'already has controller' ) {
+			alert( '已经存在控制者, 您无法进入控制模式' );
+			$( '#viewer' ).parent()
+				.addClass('live')
+				.siblings('.live')
+				.removeClass('live');
+		
 			return
 		}
 
@@ -213,25 +226,11 @@ $( function() {
     $( '.logout' ).click( function( e ) {
         e.preventDefault();
 
+		localStorage.removeItem('iscontrol');
         location.href = '/logout/';
     });
 
-    /*
-    if ( isIpad ) {
-
-        $( '.navigator' ).click( function( e ) {
-            e.preventDefault();
-
-            location.href = '/dashboard/';
-        });
-
-    } else {
-
-        initNav();
-    
-    }*/
-
-    $( '#controller, #viewer' ).bind( 'click', function( e ) {
+    $( '#controller, #viewer' ).bind('click', function( e ) {
         e.preventDefault();
 
         var target = $( e.target ),

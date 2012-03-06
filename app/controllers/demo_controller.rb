@@ -31,7 +31,7 @@ class DemoController < ApplicationController
   end
   
   def logout
-    session.destroy
+	reset_session
     redirect_to :root
   end
   

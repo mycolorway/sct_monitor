@@ -13,11 +13,11 @@ function screenSelect( e ) {
     
     var target = $( e.currentTarget ),
         eData = {
-            pageX: isIPad ? e.originalEvent.touches[0].pageX : e.pageX,
-            pageY: isIPad ? e.originalEvent.touches[0].pageY : e.pageY
+            pageX: isIpad ? e.originalEvent.touches[0].pageX : e.pageX,
+            pageY: isIpad ? e.originalEvent.touches[0].pageY : e.pageY
         };
        
-    if ( isIPad ) {
+    if ( isIpad ) {
         target.one( 'touchend.dashboard', selectStop );
         target.bind( 'touchmove.dashboard', eData, moveStart );
     } else {
@@ -31,8 +31,8 @@ function moveStart( e ) {
 
     var target = $( e.currentTarget );
 
-    var pageX = isIPad ? e.originalEvent.touches[0].pageX : e.pageX,
-        pageY = isIPad ? e.originalEvent.touches[0].pageY : e.pageY;
+    var pageX = isIpad ? e.originalEvent.touches[0].pageX : e.pageX,
+        pageY = isIpad ? e.originalEvent.touches[0].pageY : e.pageY;
 
     if ( Math.abs( pageX - e.data.originX ) < 5
             && Math.abs( pageY -  e.data.originY ) < 5 ) {
@@ -68,7 +68,7 @@ function moveStart( e ) {
         'top': eventData.originTop
     }).addClass( 'dragging' );
 
-    if ( isIPad ) {
+    if ( isIpad ) {
         target.unbind( 'touchend.dashboard' )
             .unbind( 'touchmove.dashboard' );
 
@@ -84,9 +84,9 @@ function moveStart( e ) {
     
     function moved() {
 
-        clone.bind( isIPad ? 'touchstart' : 'mousedown', screenSelect );
+        clone.bind( isIpad ? 'touchstart' : 'mousedown', screenSelect );
 
-        if ( isIPad ) {
+        if ( isIpad ) {
             clone.bind( 'tap', screenSelect );
         }
     
@@ -119,23 +119,23 @@ function moveStart( e ) {
             to_guid: drop.find( 'a' ).attr( 'guid' )
         };
 
-        if ( userType == 2 ) {
-            sendCommand({
-                'isFun': true,
-                'method': 'changeScreen("' + data.from_guid + '", "' + data.to_guid + '")'
-            });
+		if ( localStorage['iscontrol'] * 1 ) {
+			var json = {
+				'method': 'command',
+				'data': {
+					'isFun': true,
+					'method': 'changeScreen("' + data.from_guid + '", "' + data.to_guid + '")'
+				}
+			}
+
+			ws.inst.send( JSON.stringify(json) );
         }
     
         $.ajax({
             url: '/order/change/',
             data: data,
             type: 'POST',
-            dataType: 'json',
-            success: function( result ) {
-                if ( result.success ) {
-                    
-                }
-            }
+            dataType: 'json'
         });
     }
 }
@@ -156,8 +156,8 @@ function move( e ) {
     e.stopPropagation();
     var $this = $( this );
 
-    var pageX = isIPad ? e.originalEvent.touches[0].pageX : e.pageX,
-        pageY= isIPad ? e.originalEvent.touches[0].pageY : e.pageY,
+    var pageX = isIpad ? e.originalEvent.touches[0].pageX : e.pageX,
+        pageY= isIpad ? e.originalEvent.touches[0].pageY : e.pageY,
         offsetX = pageX - e.data.originX,
         offsetY = pageY - e.data.originY,
         left = e.data.originLeft,
@@ -192,7 +192,7 @@ function move( e ) {
 }
 
 function selectStop( e ) {
-    if( isIPad ) {
+    if( isIpad ) {
         location.href = $( e.currentTarget ).find( 'a' ).attr( 'href' );
     }
 }
