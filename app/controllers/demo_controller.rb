@@ -68,16 +68,43 @@ class DemoController < ApplicationController
     end
   end
   
-  def wlan_data
-    redirect_to '/demo/data/wlan.json'
+  def wlan_data    
+    if params[:static]
+      redirect_to '/demo/data/wlan.json'
+    else
+      require "#{Rails.root}/lib/demo/wlan.rb"
+      
+      respond_to do |format|
+        format.html # FIXME should redirect back
+        format.json { render :json => WlanData.load_data }
+      end
+    end
   end
   
   def alert_data
-    redirect_to "/demo/data/alert-#{params[:type]}.json"
+    if params[:static]
+      redirect_to "/demo/data/alert-#{params[:type]}.json"
+    else
+      require "#{Rails.root}/lib/demo/alerts.rb"
+      
+      respond_to do |format|
+        format.html # FIXME should redirect back
+        format.json { render :json => AlertData.load_data(params[:type]) }
+      end
+    end
   end
   
   def kpi_data
-    redirect_to '/demo/data/kpi.json'
+    if params[:static]
+      redirect_to '/demo/data/kpi.json'
+    else
+      require "#{Rails.root}/lib/demo/kpi.rb"
+      
+      respond_to do |format|
+        format.html # FIXME should redirect back
+        format.json { render :json => KpiData.load_data }
+      end
+    end
   end
   
 end
