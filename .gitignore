@@ -3,6 +3,7 @@
 *.pyo
 *.pid
 migrations
+public/assets
 # eclipse project config
 .project
 .pydevproject
