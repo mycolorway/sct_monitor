@@ -102,6 +102,11 @@ var ws = {
 }
 
 function changeScreen( from, to ) {
+    if ( !window.guid ) {
+        location.reload();
+        return
+    }
+
     if ( guid == from ) {
         location.href = '/matrix/' + to + '/';
     } else if ( guid == to ) {
