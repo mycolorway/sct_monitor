@@ -1,7 +1,7 @@
 var ws = {
     //host: 'ws://127.0.0.1:1337/', # use get_host() instead
 	inst: null,
-	debug: true,
+	debug: false,
 	iscontrol: 0,
 	pw: 'whosyourdaddy',
 	
