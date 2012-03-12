@@ -45,5 +45,10 @@ gem 'jquery-rails'
 
 gem 'seed-fu'#, '~> 2.1.0'
 
-gem 'em-websocket'
+
 gem 'spreadsheet'
+
+group :websocket_server do
+  gem 'em-websocket'
+  gem 'trollop'
+end

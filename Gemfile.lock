@@ -108,6 +108,7 @@ GEM
     treetop (1.4.10)
       polyglot
       polyglot (>= 0.3.1)
+    trollop (1.16.2)
     tzinfo (0.3.32)
     uglifier (1.2.3)
       execjs (>= 0.3.0)
@@ -127,4 +128,5 @@ DEPENDENCIES
   spreadsheet
   sqlite3
   therubyracer
+  trollop
   uglifier (>= 1.0.3)

@@ -1,3 +1,12 @@
+require 'trollop'
+require 'eventmachine'
+require 'em-websocket'
+require 'json'
+
+opts = Trollop::options do
+  opt :debug, "Debug mode", :short => 'd'
+end
+
 def send_result(socket, success=false, msg='')
   result = {
     :success => success,
@@ -11,7 +20,7 @@ EventMachine.run {
   @channels = {}
   @controllers = {}
   
-  EventMachine::WebSocket.start(:host => "0.0.0.0", :port => 1337, :debug => true) do |ws|
+  EventMachine::WebSocket.start(:host => "0.0.0.0", :port => 1337, :debug => opts[:debug]) do |ws|
     ws.onopen {
       channel = sid = false
       
@@ -28,7 +37,7 @@ EventMachine.run {
           if params.has_key? 'password' # FIXME
             if @controllers.has_key? channel.object_id
               send_result ws, false, 'already has controller'
-            elsif 'whosyourdaddy' == params['password']
+            elsif 'daddy' == params['password']
               @controllers[channel.object_id] = sid
               send_result ws, true, 'control on'
             else
