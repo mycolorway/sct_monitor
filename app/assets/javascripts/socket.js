@@ -1,16 +1,20 @@
 var ws = {
-    host: 'ws://127.0.0.1:1337/',
+    //host: 'ws://127.0.0.1:1337/', # use get_host() instead
 	inst: null,
 	debug: true,
 	iscontrol: 0,
 	pw: 'whosyourdaddy',
 	
+	get_host: function() {
+	    return 'ws://' + location.hostname + ':1337/'; 
+	},
+	
 	connect: function() {
 		try {
 			if ( 'WebSocket' in window ) {
-				this.inst = new WebSocket( this.host );
+				this.inst = new WebSocket( this.get_host() );
 			} else if ( 'MozWebSocke' in window ) {
-				this.inst = new MozWebSocket( this.host );
+				this.inst = new MozWebSocket( this.get_host() );
 			} else {
 				throw 'Your client does not support WebSocket';
 			}
