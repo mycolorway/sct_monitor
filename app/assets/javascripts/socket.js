@@ -3,7 +3,7 @@ var ws = {
 	inst: null,
 	debug: false,
 	iscontrol: 0,
-	pw: 'daddy',
+	pw: 'demo',
 	
 	get_host: function() {
 	    return 'ws://' + location.hostname + ':1337/'; 
