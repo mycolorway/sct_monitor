@@ -3,7 +3,7 @@ var ws = {
 	inst: null,
 	debug: false,
 	iscontrol: 0,
-	pw: 'whosyourdaddy',
+	pw: 'daddy',
 	
 	get_host: function() {
 	    return 'ws://' + location.hostname + ':1337/'; 
@@ -38,7 +38,7 @@ var ws = {
 			'uid': uid
 		}
 
-		if ( localStorage['iscontrol'] * 1 ) {
+		if ( localStorage['iscontrol']*1 ) {
 			$( '#controller' ).parent()
 				.addClass('live')
 				.siblings('.live')
