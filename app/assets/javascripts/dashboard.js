@@ -119,23 +119,26 @@ function moveStart( e ) {
             to_guid: drop.find( 'a' ).attr( 'guid' )
         };
 
-		if ( localStorage['iscontrol'] * 1 ) {
-			var json = {
-				'method': 'command',
-				'data': {
-					'isFun': true,
-					'method': 'changeScreen("' + data.from_guid + '", "' + data.to_guid + '")'
-				}
-			}
-
-			ws.inst.send( JSON.stringify(json) );
-        }
+		
     
         $.ajax({
             url: '/order/change/',
             data: data,
             type: 'POST',
-            dataType: 'json'
+            dataType: 'json',
+            success: function( result ) {
+                if ( result.success && localStorage['iscontrol'] * 1 ) {
+                    var json = {
+                        'method': 'command',
+                        'data': {
+                            'isFun': true,
+                            'method': 'changeScreen("' + data.from_guid + '", "' + data.to_guid + '")'
+                        }
+                    }
+
+                    ws.inst.send( JSON.stringify(json) );
+                }
+            }
         });
     }
 }
