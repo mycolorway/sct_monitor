@@ -1,9 +1,10 @@
 var ws = {
     //host: 'ws://127.0.0.1:1337/', # use get_host() instead
 	inst: null,
-	debug: false,
+	debug: true,
 	iscontrol: 0,
 	pw: 'demo',
+	is_connected: false,
 	
 	get_host: function() {
 	    return 'ws://' + location.hostname + ':1337/'; 
@@ -32,6 +33,8 @@ var ws = {
 
 	onopen: function() {
 		if ( ws.debug ) ws.print( 'Socket Status: ' + this.readyState + ' (open)');
+		
+		ws.is_connected = true;
 
 		var json = {
 			'method': 'register',
@@ -90,6 +93,12 @@ var ws = {
 
 	onclose: function() {
 		if ( ws.debug ) ws.print( 'Socket Status: ' + this.readyState + ' (closed)');
+		
+		var situation = ws.is_connected ? '掉线了' : '没连上服务器';
+		
+		if ( confirm('啊咧，{s}。要刷新一下试试么?'.replace('{s}', situation)) ) {
+            location.reload();
+        }
 	},
 
 	oncontrol: null,
