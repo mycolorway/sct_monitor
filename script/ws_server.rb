@@ -58,8 +58,15 @@ EventMachine.run {
           end
           
         when 'control_off'
+          if @controllers[channel.object_id] == sid
             @controllers.delete channel.object_id
-            send_result ws, true, 'control off'
+            channel.push JSON.dump({
+              :success => true,
+              :msg => 'control off'
+            })
+          else
+            send_result ws, false, 'you\'re not controller.'
+          end
           
         when 'command'
           if sid == @controllers[channel.object_id]
