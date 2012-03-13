@@ -37,7 +37,7 @@ EventMachine.run {
           if params.has_key? 'password' # FIXME
             if @controllers.has_key? channel.object_id
               send_result ws, false, 'already has controller'
-            elsif "demo" == params['password'].downcase
+            elsif 'demo' == params['password'].downcase
               @controllers[channel.object_id] = sid
               send_result ws, true, 'control on'
             else
@@ -50,7 +50,8 @@ EventMachine.run {
         when 'control_on'
           if @controllers.has_key? channel.object_id
             send_result ws, false, 'already has controller'
-          elsif 'demo' == params['password'].downcase
+          elsif (params.has_key? 'password') && 
+                ('demo' == params['password'].downcase)
             @controllers[channel.object_id] = sid
             send_result ws, true, 'control on'
           else
