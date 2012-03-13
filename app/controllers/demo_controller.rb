@@ -19,8 +19,8 @@ class DemoController < ApplicationController
   def login
     credentials = JSON.load(params[:data])
     
-    if ('demo' == credentials['username'] || 'Demo' == credentials['username']) &&
-      'demo' == credentials['password'] || 'Demo' == credentials['password']
+    if ('demo' == credentials['username'].downcase) && 
+       ('demo' == credentials['password'].downcase)
       session[:uid] = 1
       session[:is_controller] = false
     end
