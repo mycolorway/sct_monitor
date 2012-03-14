@@ -19,6 +19,7 @@ end
 EventMachine.run {
   @channels = {}
   @controllers = {}
+  @sockets = {}
   
   EventMachine::WebSocket.start(:host => "0.0.0.0", :port => 1337, :debug => opts[:debug]) do |ws|
     ws.onopen {
@@ -33,11 +34,16 @@ EventMachine.run {
           @channels[uid] = EM::Channel.new unless @channels.has_key? uid
           channel = @channels[uid]
           sid = channel.subscribe { |msg| ws.send msg }
+          @sockets[sid] = ws
           
           if params.has_key? 'password' # FIXME
-            if @controllers.has_key? channel.object_id
-              send_result ws, false, 'already has controller'
-            elsif 'demo' == params['password'].downcase
+            if 'demo' == params['password'].downcase
+              if (@controllers.has_key? channel.object_id) && 
+                 (@controllers[channel.object_id] != sid)
+                old_ctrlr = @controllers[channel.object_id]
+                send_result @sockets[old_ctrlr], true, 'control off'
+              end
+              
               @controllers[channel.object_id] = sid
               send_result ws, true, 'control on'
             else
@@ -48,10 +54,13 @@ EventMachine.run {
           end
           
         when 'control_on'
-          if @controllers.has_key? channel.object_id
-            send_result ws, false, 'already has controller'
-          elsif (params.has_key? 'password') && 
-                ('demo' == params['password'].downcase)
+          if 'demo' == params['password'].downcase
+            if (@controllers.has_key? channel.object_id) && 
+               (@controllers[channel.object_id] != sid)
+              old_ctrlr = @controllers[channel.object_id]
+              send_result @sockets[old_ctrlr], true, 'control off'
+            end
+            
             @controllers[channel.object_id] = sid
             send_result ws, true, 'control on'
           else

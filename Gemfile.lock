@@ -38,6 +38,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.2.0)
+    daemons (1.1.8)
     em-websocket (0.3.6)
       addressable (>= 2.1.1)
       eventmachine (>= 0.12.9)
@@ -119,6 +120,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
+  daemons
   em-websocket
   jquery-rails
   json
