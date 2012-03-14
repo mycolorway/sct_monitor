@@ -1,6 +1,7 @@
 <% content_for :title do %>Dashboard<% end %>
 
 <% content_for :styles do %>
+<link href="/style/sass/style.less" rel="stylesheet/less" />
 <%= stylesheet_link_tag    "dashboard", :media => "all" %>
 <% end %>
 
@@ -14,7 +15,12 @@
 <div class="dashboard-wrapper">
     <div class="header">
         <h1>电信业务监控系统</h1>
+        <div class="logout" title="退出"><a href="/logout/">退出</a></div>
+        <div class="mode">
+            <span class="viewer live" title="自动模式"><a href="#" id="viewer">观察</a></span><span class="controller" title="控制模式"><a href="#" id="controller">控制</a></span>
+        </div>
     </div>
+
     <div class="content">
         <div class="dashboard-nav">
             <% @matrices.each do |matrix| %>

@@ -14,7 +14,7 @@ var ws = {
 		try {
 			if ( 'WebSocket' in window ) {
 				this.inst = new WebSocket( this.get_host() );
-			} else if ( 'MozWebSocke' in window ) {
+			} else if ( 'MozWebSocket' in window ) {
 				this.inst = new MozWebSocket( this.get_host() );
 			} else {
 				throw 'Your client does not support WebSocket';
@@ -42,11 +42,6 @@ var ws = {
 		}
 
 		if ( localStorage['iscontrol']*1 ) {
-			$( '#controller' ).parent()
-				.addClass('live')
-				.siblings('.live')
-				.removeClass('live');
-
 			json.password = ws.pw;
 		}
 		
@@ -58,31 +53,41 @@ var ws = {
 
 		if ( ws.debug ) ws.print( json );
 
+        // every body receive if no controller, 
+        // or only ex-controller receive when replaced by another one
 		if ( json.msg && json.msg == 'control off' ) {
 			if ( this.oncontroloff && $.isFunction(this.oncontroloff) ) this.oncontroloff();
-			localStorage['iscontrol'] = ws.iscontrol = 0;
+            localStorage['iscontrol'] = ws.iscontrol = 0;
+		
+			var viewer = $( '#viewer' ).parent();
+
+            if ( !viewer.hasClass('live') ) {
+                viewer.addClass( 'live' )
+                    .siblings( '.live' )
+                    .removeClass( 'live' );
+
+                alert( '你已经退出了控制模式' );
+            }
 
 			return
 		}
 
 		if ( ws.iscontrol ) return
 		
+		// only receive by the current controller
 		if ( json.msg && json.msg == 'control on' ) {
 			if ( this.oncontrol && $.isFunction(this.oncontrol) ) this.oncontrol();
+
+            var controller = $( '#controller' ).parent();
+
+            if ( !controller.hasClass('live') ) {
+                controller.addClass('live')
+                    .siblings('.live')
+                    .removeClass('live');
+            }
+
 			localStorage['iscontrol'] = ws.iscontrol = 1;
 			
-			return
-		}
-
-		if ( json.msg && json.msg == 'already has controller' ) {
-			alert( '已经存在控制者, 您无法进入控制模式' );
-			$( '#viewer' ).parent()
-				.addClass('live')
-				.siblings('.live')
-				.removeClass('live');
-				
-			localStorage['iscontrol'] = 0;
-		
 			return
 		}
 
@@ -142,34 +147,25 @@ $( function() {
         location.href = '/logout/';
     });
 
-    $( '#controller, #viewer' ).bind('click', function( e ) {
-        e.preventDefault();
-
-        var target = $( e.target ),
-            $span = target.parent();
-
-        if ( $span.hasClass( 'live' )) return;
-
-        $span.addClass( 'live' )
-            .siblings( '.live' )
-            .removeClass( 'live' );
-    });
-
 	$( '#controller' ).bind('click', function(e) {
 		e.preventDefault();
 
+		if ( $( e.target ).parent().hasClass('live') ) return
+
 		var key = window.prompt('请输入控制密码：');
-		var d = {
-			'method': 'control_on',
-			'uid': uid,
-			'password': key
-		};
+            d = {
+                'method': 'control_on',
+                'uid': uid,
+                'password': key
+            };
 
 		ws.inst.send( JSON.stringify(d) );
 	});
 
 	$( "#viewer" ).click(function(e) {
 		e.preventDefault();
+
+		if ( $( e.target ).parent().hasClass('live') ) return
 
 		var json = {
 			'method': 'control_off',

@@ -12,8 +12,8 @@ body {
 }
 
     .dashboard-wrapper .header {
-        visibility: hidden;
         height: 225px;
+        background: none;
     }
 
     .dashboard-wrapper .content {
