@@ -1,3 +1,5 @@
+# usage: rails r script/ws_server_ctrl.rb start
+
 require 'rubygems'
 Bundler.require(:default, :websocket_server)
 require 'daemons'

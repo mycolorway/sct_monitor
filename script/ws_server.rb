@@ -1,3 +1,6 @@
+# Dont run this script directly
+# usage: rails r script/ws_server_ctrl.rb start
+
 require 'trollop'
 require 'eventmachine'
 require 'em-websocket'
