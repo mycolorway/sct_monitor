@@ -118,8 +118,6 @@ function moveStart( e ) {
             from_guid: clone.find( 'a' ).attr( 'guid' ),
             to_guid: drop.find( 'a' ).attr( 'guid' )
         };
-
-		
     
         $.ajax({
             url: '/order/change/',
@@ -197,6 +195,63 @@ function move( e ) {
 function selectStop( e ) {
     if( isIpad ) {
         location.href = $( e.currentTarget ).find( 'a' ).attr( 'href' );
+    }
+}
+
+window.exchange = {
+    from: null, 
+    to: null,
+    i: 0,
+
+    exec: function() {
+        if ( !this.from ) this.from = $( '#dashboard-item-1 a' ).attr('guid');
+        if ( !this.to ) this.to = $( '#dashboard-item-3 a' ).attr('guid');
+
+        var from = this.from,
+            to = this.to;
+
+        var fromElem = $( 'a[guid=' + from + ']' ).parent(),
+            toElem = $( 'a[guid=' + to + ']' ).parent(),
+            cssAnimation = document.createElement('style'),
+            style = document.createTextNode('@-webkit-keyframes from {' +
+                '0% { -webkit-transform: scale(1); }' +
+                '50% { -webkit-transform: scale(1.2); }' +
+                '100% { -webkit-transform: scale(1); left: ' + toElem.css('left') + '; top: ' + toElem.css('top') + '; }}' +
+                '@-webkit-keyframes to {' +
+                '0% { -webkit-transform: scale(1); }' +
+                '50% { -webkit-transform: scale(1.2); }' +
+                '100% { -webkit-transform: scale(1); left: ' + fromElem.css('left') + '; top: ' + fromElem.css('top') + '; }}');
+
+        cssAnimation.type = 'text/css';
+        cssAnimation.id = 'style-exchange';
+        cssAnimation.appendChild(style);
+        $( 'head' ).append(cssAnimation);
+
+        fromElem.bind('webkitAnimationEnd', $.proxy(this.end, this));
+        toElem.bind('webkitAnimationEnd', $.proxy(this.end, this));
+
+        fromElem.addClass('exchangeFrom');
+        toElem.addClass('exchangeTo');
+    },
+
+    end: function(e) {
+        $( e.target ).unbind('webkitAnimationEnd')
+            .removeClass('exchangeFrom exchangeTo');
+        
+        if ( this.i == 0 ) {
+            this.i++;
+        } else {
+            var fromElem = $( 'a[guid=' + this.from + ']' ),
+                toElem = $( 'a[guid=' + this.to + ']' ),
+                fromWrap = fromElem.parent(),
+                toWrap = toElem.parent();
+
+            fromWrap.append(toElem);
+            toWrap.append(fromElem);
+
+            $( '#style-exchange' ).remove();
+            this.i = 0;
+        }
     }
 }
 
