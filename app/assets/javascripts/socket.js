@@ -118,8 +118,8 @@ var ws = {
 }
 
 function changeScreen( from, to ) {
-    if ( !window.guid ) {
-        location.reload();
+    if ( !window.guid && exchange ) {
+        exchange.exec(from, to);
         return
     }
 

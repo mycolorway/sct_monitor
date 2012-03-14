@@ -91,3 +91,13 @@ body {
             width: 483px;
             height: 363px;
         }
+
+.exchangeFrom {
+    z-index: 99999;
+    -webkit-animation: from 1s;
+}
+
+.exchangeTo {
+    z-index: 99999;
+    -webkit-animation: to 1s;
+}
