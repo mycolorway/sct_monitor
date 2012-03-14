@@ -203,12 +203,12 @@ window.exchange = {
     to: null,
     i: 0,
 
-    exec: function() {
-        if ( !this.from ) this.from = $( '#dashboard-item-1 a' ).attr('guid');
-        if ( !this.to ) this.to = $( '#dashboard-item-3 a' ).attr('guid');
+    exec: function(from, to) {
+        if ( !from ) from = $( '#dashboard-item-1 a' ).attr('guid');
+        if ( !to ) to = $( '#dashboard-item-3 a' ).attr('guid');
 
-        var from = this.from,
-            to = this.to;
+        this.from = from;
+        this.to = to;
 
         var fromElem = $( 'a[guid=' + from + ']' ).parent(),
             toElem = $( 'a[guid=' + to + ']' ).parent(),
