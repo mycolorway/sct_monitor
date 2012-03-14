@@ -80,6 +80,8 @@ var ws = {
 				.addClass('live')
 				.siblings('.live')
 				.removeClass('live');
+				
+			localStorage['iscontrol'] = 0;
 		
 			return
 		}
