@@ -94,16 +94,16 @@ body {
 
 .exchangeFrom {
     z-index: 99999;
-    -webkit-animation: from 1s;
+    -webkit-animation: from 0.75s ease-in-out;
 }
     .exchangeFrom img {
-        -webkit-animation: fromsize 1s;
+        -webkit-animation: fromsize 0.75s ease-in-out;
     }
 
 .exchangeTo {
     z-index: 99999;
-    -webkit-animation: to 1s;
+    -webkit-animation: to 0.75s ease-in-out;
 }
     .exchangeTo img {
-        -webkit-animation: tosize 1s;
+        -webkit-animation: tosize 0.75s ease-in-out;
     }

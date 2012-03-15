@@ -83,41 +83,23 @@ function moveStart( e ) {
     };
     
     function moved() {
+        clone.bind(isIpad ? 'touchstart tap' : 'mousedown', screenSelect)
+            .removeClass( 'holder' );
 
-        clone.bind( isIpad ? 'touchstart' : 'mousedown', screenSelect );
-
-        if ( isIpad ) {
-            clone.bind( 'tap', screenSelect );
-        }
-    
-        clone.removeClass( 'holder' );
         target.remove();
 
         var drop = $( '.dashboard-item.drop' );
 
-        if ( !drop.length ) { 
-            return
-        }
+        if ( !drop.length ) return
 
         drop.removeClass( 'drop' );
 
-        var originEl = clone.find( 'a' ),
-            dropEl = drop.find( 'a' );
-
-        dropEl.hide();
-
-        originEl.hide()
-            .appendTo( drop )
-            .slideDown( 400, function() {
-
-            });
-
-        dropEl.appendTo( clone ).delay(350).fadeIn( 300 );
-                    
         var data = {
             from_guid: clone.find( 'a' ).attr( 'guid' ),
             to_guid: drop.find( 'a' ).attr( 'guid' )
         };
+
+        exchange.exec(data.from_guid, data.to_guid);
     
         $.ajax({
             url: '/order/change/',
