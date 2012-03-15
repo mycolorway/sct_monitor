@@ -213,14 +213,33 @@ window.exchange = {
         var fromElem = $( 'a[guid=' + from + ']' ).parent(),
             toElem = $( 'a[guid=' + to + ']' ).parent(),
             cssAnimation = document.createElement('style'),
+            style;
+
+        if ( fromElem.width() == toElem.width() ) {
+
             style = document.createTextNode('@-webkit-keyframes from {' +
                 '0% { -webkit-transform: scale(1); }' +
-                '50% { -webkit-transform: scale(1.2); }' +
+                '50% { -webkit-transform: scale(1.1); }' +
                 '100% { -webkit-transform: scale(1); left: ' + toElem.css('left') + '; top: ' + toElem.css('top') + '; }}' +
                 '@-webkit-keyframes to {' +
                 '0% { -webkit-transform: scale(1); }' +
-                '50% { -webkit-transform: scale(1.2); }' +
+                '50% { -webkit-transform: scale(1.1); }' +
                 '100% { -webkit-transform: scale(1); left: ' + fromElem.css('left') + '; top: ' + fromElem.css('top') + '; }}');
+        } else {
+
+            style = document.createTextNode('@-webkit-keyframes from {' +
+                '0% { }' +
+                '100% { left: ' + toElem.css('left') + '; top: ' + toElem.css('top') + ';}}' +
+                '@-webkit-keyframes to {' +
+                '0% { }' +
+                '100% { left: ' + fromElem.css('left') + '; top: ' + fromElem.css('top') + ';}}' +
+                '@-webkit-keyframes fromsize {' +
+                '0% { }' +
+                '100% { width: ' + toElem.width() + 'px; height: ' + toElem.height() + 'px; }}' +
+                '@-webkit-keyframes tosize {' +
+                '0% { }' +
+                '100% { width: ' + fromElem.width() + 'px; height: ' + fromElem.height() + 'px; }}');
+        }
 
         cssAnimation.type = 'text/css';
         cssAnimation.id = 'style-exchange';
@@ -235,7 +254,11 @@ window.exchange = {
     },
 
     end: function(e) {
-        $( e.target ).unbind('webkitAnimationEnd')
+        var target = $( e.target );
+
+        if ( !target.hasClass('dashboard-item') ) return
+
+        target.unbind('webkitAnimationEnd')
             .removeClass('exchangeFrom exchangeTo');
         
         if ( this.i == 0 ) {
