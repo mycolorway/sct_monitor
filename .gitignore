@@ -22,3 +22,4 @@ logs
 log
 # local settings
 *.swp
+script/ws_server.rb.output
