@@ -3,10 +3,18 @@
 $( function() {
 
     $( '.dashboard-wrapper' ).height($( window ).height());
-	$( '.dashboard-item' ).bind(isIpad ? 'touchstart tap' : 'mousedown', screenSelect);
+
 	ws.connect();
 
 });
+
+ws.oncontrol = function() {
+	$( '.dashboard-item' ).bind(isIpad ? 'touchstart tap' : 'mousedown', screenSelect);
+}
+
+ws.oncontroloff = function() {
+	$( '.dashboard-item' ).unbind(isIpad ? 'touchstart tap' : 'mousedown');
+}
 
 function screenSelect( e ) {
     e.preventDefault();
