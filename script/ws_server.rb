@@ -5,6 +5,7 @@ require 'trollop'
 require 'eventmachine'
 require 'em-websocket'
 require 'json'
+require 'active_support/core_ext/object/blank'
 
 opts = Trollop::options do
   opt :debug, "Debug mode", :short => 'd'
@@ -39,7 +40,7 @@ EventMachine.run {
           sid = channel.subscribe { |msg| ws.send msg }
           @sockets[sid] = ws
           
-          if params.has_key? 'password' # FIXME
+          if params['password'].presence # FIXME
             if 'demo' == params['password'].downcase
               if (@controllers.has_key? channel.object_id) && 
                  (@controllers[channel.object_id] != sid)
@@ -57,7 +58,7 @@ EventMachine.run {
           end
           
         when 'control_on'
-          if (params.has_key? 'password') && 
+          if params['password'].presence && 
              ('demo' == params['password'].downcase)
             if (@controllers.has_key? channel.object_id) && 
                (@controllers[channel.object_id] != sid)
