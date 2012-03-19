@@ -57,7 +57,8 @@ EventMachine.run {
           end
           
         when 'control_on'
-          if 'demo' == params['password'].downcase
+          if (params.has_key? 'password') && 
+             ('demo' == params['password'].downcase)
             if (@controllers.has_key? channel.object_id) && 
                (@controllers[channel.object_id] != sid)
               old_ctrlr = @controllers[channel.object_id]

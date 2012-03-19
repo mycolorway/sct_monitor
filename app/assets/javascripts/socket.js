@@ -103,7 +103,7 @@ var ws = {
 		
 		var situation = ws.is_connected ? '掉线了' : '没连上服务器';
 		
-		if ( confirm('啊咧，{s}。要刷新一下试试么?'.replace('{s}', situation)) ) {
+		if ( confirm('啊咧，{s}。要刷新一下试试么?\nPS: 如果一直这样，点取消，报告管理员。'.replace('{s}', situation)) ) {
             location.reload();
         }
 	},
